@@ -12,17 +12,36 @@
     <header class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Public Downloads</p>
-        <h1>STANAG4609 Inspector Downloads</h1>
         <p class="lede">
           This page always points to the latest public release published from the internal build workflow.
         </p>
-        <div class="hero-actions" id="hero-actions"></div>
-        <p class="release-status" id="release-status">Loading latest installer...</p>
+        <dl class="release-meta" id="release-meta">
+          <div>
+            <dt>Version</dt>
+            <dd>Loading...</dd>
+          </div>
+          <div>
+            <dt>Released</dt>
+            <dd>Loading...</dd>
+          </div>
+        </dl>
+        <p class="release-status" id="release-status">Loading latest release details...</p>
+        <div class="hero-links" id="hero-links"></div>
       </div>
-      <div class="hero-artwork">
-        <img src="./stinspector-splash-light.png" alt="STANAG4609 Inspector application splash screen">
+      <div class="hero-side">
+        <div class="hero-artwork">
+          <img src="./stinspector-splash-light.png" alt="STANAG4609 Inspector application splash screen">
+        </div>
+        <div class="hero-actions" id="hero-actions"></div>
       </div>
     </header>
+
+    <section class="changelog-panel">
+      <details class="changelog-details" id="changelog-details">
+        <summary>Latest changelog</summary>
+        <div class="changelog-body" id="changelog-body">Loading changelog...</div>
+      </details>
+    </section>
   </div>
 
   <script src="./app.js" defer></script>
