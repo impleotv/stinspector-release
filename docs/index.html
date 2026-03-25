@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STANAG4609 Inspector Downloads</title>
+  <meta name="description" content="Latest STANAG4609 Inspector release downloads and release notes.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Public Downloads</p>
+      <h1>STANAG4609 Inspector Downloads</h1>
+      <p class="lede">
+        This page always points to the latest public release published from the internal build workflow.
+      </p>
+      <div class="hero-actions" id="hero-actions">
+        <a class="button button-secondary" href="https://github.com/impleotv/stinspector-release/releases">All Releases</a>
+      </div>
+    </header>
+
+    <main class="content-grid">
+      <section class="panel panel-highlight" aria-labelledby="latest-release-heading">
+        <div class="panel-header">
+          <p class="panel-kicker">Latest Release</p>
+          <h2 id="latest-release-heading">Loading release metadata...</h2>
+        </div>
+        <dl class="release-meta" id="release-meta"></dl>
+        <p class="release-summary" id="release-summary">
+          Fetching the latest release from GitHub.
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="downloads-heading">
+        <div class="panel-header">
+          <p class="panel-kicker">Downloads</p>
+          <h2 id="downloads-heading">Assets</h2>
+        </div>
+        <div id="primary-download"></div>
+        <ul class="asset-list" id="asset-list"></ul>
+      </section>
+
+      <section class="panel panel-wide" aria-labelledby="notes-heading">
+        <div class="panel-header">
+          <p class="panel-kicker">Release Notes</p>
+          <h2 id="notes-heading">Latest Changes</h2>
+        </div>
+        <div class="release-notes" id="release-notes"></div>
+      </section>
+    </main>
+  </div>
+
+  <template id="asset-template">
+    <li class="asset-item">
+      <div>
+        <p class="asset-name"></p>
+        <p class="asset-meta"></p>
+      </div>
+      <a class="button button-small" target="_blank" rel="noreferrer">Download</a>
+    </li>
+  </template>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
