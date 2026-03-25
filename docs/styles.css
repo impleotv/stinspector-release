@@ -41,6 +41,10 @@ a {
 }
 
 .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 28px;
+  align-items: center;
   position: relative;
   overflow: hidden;
   padding: 40px;
@@ -58,6 +62,28 @@ a {
   height: 280px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(201, 92, 43, 0.18), transparent 70%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-artwork {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-artwork img {
+  display: block;
+  width: min(100%, 520px);
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 22px 50px rgba(38, 46, 51, 0.18);
+  border: 1px solid rgba(37, 46, 52, 0.08);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .eyebrow,
@@ -123,6 +149,16 @@ h1 {
   background: var(--accent-strong);
 }
 
+.button-secondary {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text);
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .primary-download-card {
   display: flex;
   align-items: flex-start;
@@ -157,6 +193,14 @@ h1 {
 }
 
 @media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-artwork {
+    justify-content: center;
+  }
+
   .primary-download-card {
     flex-direction: column;
     align-items: flex-start;

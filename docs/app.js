@@ -1,8 +1,19 @@
 ﻿const releaseRepo = 'impleotv/stinspector-release';
 const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
+const releasesUrl = `https://github.com/${releaseRepo}/releases`;
 
 const heroActions = document.getElementById('hero-actions');
 const releaseStatus = document.getElementById('release-status');
+
+function createOlderReleasesLink() {
+  const link = document.createElement('a');
+  link.className = 'button button-secondary';
+  link.href = releasesUrl;
+  link.target = '_blank';
+  link.rel = 'noreferrer';
+  link.textContent = 'Older Releases';
+  return link;
+}
 
 function createPrimaryDownload(asset) {
   const wrapper = document.createElement('div');
@@ -21,7 +32,9 @@ function createPrimaryDownload(asset) {
   link.rel = 'noreferrer';
   link.textContent = 'Download Installer';
 
-  wrapper.append(copy, link);
+  const olderReleasesLink = createOlderReleasesLink();
+
+  wrapper.append(copy, link, olderReleasesLink);
   heroActions.replaceChildren(wrapper);
 }
 
@@ -35,7 +48,11 @@ function renderAssets(assets) {
     return;
   }
 
-  heroActions.innerHTML = '<p class="empty-state">No installer executable was attached to the latest release.</p>';
+  const emptyState = document.createElement('p');
+  emptyState.className = 'empty-state';
+  emptyState.textContent = 'No installer executable was attached to the latest release.';
+
+  heroActions.replaceChildren(emptyState, createOlderReleasesLink());
   releaseStatus.textContent = 'Release found, but no installer asset is available.';
 }
 
@@ -54,7 +71,11 @@ async function loadLatestRelease() {
     const release = await response.json();
     renderAssets(release.assets || []);
   } catch (error) {
-    heroActions.innerHTML = '<p class="error-state">Release assets are temporarily unavailable.</p>';
+    const errorState = document.createElement('p');
+    errorState.className = 'error-state';
+    errorState.textContent = 'Release assets are temporarily unavailable.';
+
+    heroActions.replaceChildren(errorState, createOlderReleasesLink());
     releaseStatus.textContent = error instanceof Error ? error.message : 'Unable to load the latest release.';
   }
 }
