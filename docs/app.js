@@ -163,7 +163,7 @@ function createPrimaryDownload(asset) {
 
   const sizeLabel = document.createElement('p');
   sizeLabel.className = 'download-size';
-  sizeLabel.textContent = formatBytes(asset.size);
+  sizeLabel.textContent = `Download size: ${formatBytes(asset.size)}`;
 
   const olderReleasesLink = createOlderReleasesLink();
 

@@ -142,6 +142,22 @@ h2,
   font-style: italic;
 }
 
+.manual-link-row {
+  margin: 10px 0 0;
+}
+
+.manual-link {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.manual-link:hover {
+  color: var(--accent);
+}
+
 .release-meta {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
