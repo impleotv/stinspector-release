@@ -15,51 +15,10 @@
       <p class="lede">
         This page always points to the latest public release published from the internal build workflow.
       </p>
-      <div class="hero-actions" id="hero-actions">
-        <a class="button button-secondary" href="https://github.com/impleotv/stinspector-release/releases">All Releases</a>
-      </div>
+      <div class="hero-actions" id="hero-actions"></div>
+      <p class="release-status" id="release-status">Loading latest installer...</p>
     </header>
-
-    <main class="content-grid">
-      <section class="panel panel-highlight" aria-labelledby="latest-release-heading">
-        <div class="panel-header">
-          <p class="panel-kicker">Latest Release</p>
-          <h2 id="latest-release-heading">Loading release metadata...</h2>
-        </div>
-        <dl class="release-meta" id="release-meta"></dl>
-        <p class="release-summary" id="release-summary">
-          Fetching the latest release from GitHub.
-        </p>
-      </section>
-
-      <section class="panel" aria-labelledby="downloads-heading">
-        <div class="panel-header">
-          <p class="panel-kicker">Downloads</p>
-          <h2 id="downloads-heading">Assets</h2>
-        </div>
-        <div id="primary-download"></div>
-        <ul class="asset-list" id="asset-list"></ul>
-      </section>
-
-      <section class="panel panel-wide" aria-labelledby="notes-heading">
-        <div class="panel-header">
-          <p class="panel-kicker">Release Notes</p>
-          <h2 id="notes-heading">Latest Changes</h2>
-        </div>
-        <div class="release-notes" id="release-notes"></div>
-      </section>
-    </main>
   </div>
-
-  <template id="asset-template">
-    <li class="asset-item">
-      <div>
-        <p class="asset-name"></p>
-        <p class="asset-meta"></p>
-      </div>
-      <a class="button button-small" target="_blank" rel="noreferrer">Download</a>
-    </li>
-  </template>
 
   <script src="./app.js" defer></script>
 </body>
