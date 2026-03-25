@@ -113,7 +113,7 @@ function setReleaseMeta(version, releasedAt) {
 
 function createOlderReleasesLink() {
   const link = document.createElement('a');
-  link.className = 'button button-secondary';
+  link.className = 'older-releases-link';
   link.href = releasesUrl;
   link.target = '_blank';
   link.rel = 'noreferrer';
@@ -136,7 +136,6 @@ function createPrimaryDownload(asset) {
   const copy = document.createElement('div');
   copy.innerHTML = `
     <h3>${asset.name}</h3>
-    <p class="release-status">Windows installer setup for the latest public release.</p>
   `;
 
   const link = document.createElement('a');
@@ -162,7 +161,7 @@ function renderAssets(assets) {
 
   if (installerAsset) {
     createPrimaryDownload(installerAsset);
-    releaseStatus.textContent = 'Latest public Windows installer.';
+    releaseStatus.textContent = '';
     return;
   }
 
