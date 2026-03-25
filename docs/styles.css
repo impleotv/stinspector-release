@@ -182,6 +182,7 @@ h2,
   left: 44px;
   bottom: 28px;
   justify-content: flex-start;
+  margin-top: 18px;
 }
 
 .hero-actions {
@@ -233,6 +234,13 @@ h2,
 .asset-name {
   font-size: 1.1rem;
   margin: 0;
+}
+
+.download-size {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
 .release-status:empty {
@@ -336,7 +344,7 @@ h2,
 
   .hero-links {
     position: static;
-    margin-top: 8px;
+    margin-top: 18px;
   }
 
   .primary-download-card {

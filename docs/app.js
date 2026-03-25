@@ -8,6 +8,22 @@ const releaseStatus = document.getElementById('release-status');
 const releaseMeta = document.getElementById('release-meta');
 const changelogBody = document.getElementById('changelog-body');
 
+function formatBytes(bytes) {
+  if (!Number.isFinite(bytes) || bytes <= 0) {
+    return 'Unknown size';
+  }
+
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let value = bytes;
+  let unitIndex = 0;
+  while (value >= 1024 && unitIndex < units.length - 1) {
+    value /= 1024;
+    unitIndex += 1;
+  }
+
+  return `${value.toFixed(value >= 10 || unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
+}
+
 function formatDate(isoDate) {
   if (!isoDate) {
     return 'Unknown';
@@ -145,9 +161,13 @@ function createPrimaryDownload(asset) {
   link.rel = 'noreferrer';
   link.textContent = 'Download Installer';
 
+  const sizeLabel = document.createElement('p');
+  sizeLabel.className = 'download-size';
+  sizeLabel.textContent = formatBytes(asset.size);
+
   const olderReleasesLink = createOlderReleasesLink();
 
-  wrapper.append(copy, link);
+  wrapper.append(copy, link, sizeLabel);
   heroActions.replaceChildren(wrapper);
 
   if (heroLinks) {
