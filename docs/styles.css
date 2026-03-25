@@ -91,7 +91,7 @@ a {
 
 .hero-artwork img {
   display: block;
-  width: min(100%, 620px);
+  width: min(100%, 760px);
   height: auto;
   object-fit: contain;
   border-radius: 24px;
@@ -331,7 +331,7 @@ h2,
   }
 
   .hero-artwork img {
-    width: min(100%, 520px);
+    width: min(100%, 640px);
   }
 
   .changelog-details summary,

@@ -39,7 +39,12 @@ function renderMarkdown(markdown) {
     return '<p class="empty-state">Release notes were not provided for this version.</p>';
   }
 
-  const escaped = escapeHtml(markdown.trim());
+  const sanitizedMarkdown = markdown
+    .replace(/<a\s+name="[^"]+"\s*><\/a>\s*/gi, '')
+    .replace(/^<a\s+name="[^"]+"\s*><\/a>\s*$/gim, '')
+    .trim();
+
+  const escaped = escapeHtml(sanitizedMarkdown);
   const lines = escaped.split(/\r?\n/);
   let html = '';
   let listOpen = false;
