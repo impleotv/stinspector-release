@@ -1,6 +1,7 @@
 ﻿const releaseRepo = 'impleotv/stinspector-release';
 const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
 const releasesUrl = `https://github.com/${releaseRepo}/releases`;
+const testFilesName = 'testfiles.zip';
 
 const heroActions = document.getElementById('hero-actions');
 const heroLinks = document.getElementById('hero-links');
@@ -137,12 +138,42 @@ function createOlderReleasesLink() {
   return link;
 }
 
-function renderHeroLinks() {
+function buildDemoFilesUrl(tagName) {
+  if (!tagName) {
+    return null;
+  }
+
+  return `https://github.com/${releaseRepo}/releases/download/${tagName}/${testFilesName}`;
+}
+
+function createDemoFilesLink(downloadUrl) {
+  if (!downloadUrl) {
+    return null;
+  }
+
+  const link = document.createElement('a');
+  link.className = 'older-releases-link';
+  link.href = downloadUrl;
+  link.target = '_blank';
+  link.rel = 'noreferrer';
+  link.textContent = 'Demo files';
+  return link;
+}
+
+function renderHeroLinks(release) {
   if (!heroLinks) {
     return;
   }
 
-  heroLinks.replaceChildren(createOlderReleasesLink());
+  const links = [createOlderReleasesLink()];
+  const demoAsset = release?.assets?.find((asset) => asset.name?.toLowerCase() === testFilesName);
+  const demoFilesLink = createDemoFilesLink(demoAsset?.browser_download_url || buildDemoFilesUrl(release?.tag_name));
+
+  if (demoFilesLink) {
+    links.push(demoFilesLink);
+  }
+
+  heroLinks.replaceChildren(...links);
 }
 
 function createPrimaryDownload(asset) {
@@ -165,14 +196,8 @@ function createPrimaryDownload(asset) {
   sizeLabel.className = 'download-size';
   sizeLabel.textContent = `Download size: ${formatBytes(asset.size)}`;
 
-  const olderReleasesLink = createOlderReleasesLink();
-
   wrapper.append(copy, link, sizeLabel);
   heroActions.replaceChildren(wrapper);
-
-  if (heroLinks) {
-    heroLinks.replaceChildren(olderReleasesLink);
-  }
 }
 
 function renderAssets(assets) {
@@ -189,7 +214,7 @@ function renderAssets(assets) {
   emptyState.className = 'empty-state';
   emptyState.textContent = 'No installer executable was attached to the latest release.';
 
-  heroActions.replaceChildren(emptyState, createOlderReleasesLink());
+  heroActions.replaceChildren(emptyState);
   releaseStatus.textContent = 'Release found, but no installer asset is available.';
 }
 
@@ -208,6 +233,7 @@ async function loadLatestRelease() {
     }
 
     const release = await response.json();
+    renderHeroLinks(release);
     setReleaseMeta(release.tag_name, release.published_at);
     renderAssets(release.assets || []);
     changelogBody.innerHTML = renderMarkdown(release.body || '');
@@ -216,7 +242,7 @@ async function loadLatestRelease() {
     errorState.className = 'error-state';
     errorState.textContent = 'Release assets are temporarily unavailable.';
 
-    heroActions.replaceChildren(errorState, createOlderReleasesLink());
+    heroActions.replaceChildren(errorState);
     releaseStatus.textContent = error instanceof Error ? error.message : 'Unable to load the latest release.';
     changelogBody.innerHTML = `<p class="error-state">${error instanceof Error ? error.message : 'Unable to load the latest release.'}</p>`;
   }

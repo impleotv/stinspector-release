@@ -197,6 +197,8 @@ h2,
   position: absolute;
   left: 44px;
   bottom: 28px;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
   margin-top: 18px;
 }
