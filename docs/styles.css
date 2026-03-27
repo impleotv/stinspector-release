@@ -165,7 +165,7 @@ h2,
   margin: 0;
 }
 
-.release-meta div {
+.release-meta > div {
   min-width: 0;
   padding: 14px 16px;
   border: 1px solid var(--line);
@@ -197,6 +197,10 @@ h2,
   margin-top: 12px;
   flex-direction: row;
   align-items: center;
+}
+
+.meta-links .older-releases-link + .older-releases-link {
+  margin-left: 12px;
 }
 
 .hero-actions {
