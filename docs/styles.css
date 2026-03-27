@@ -82,6 +82,12 @@ a {
   border-top: 1px solid rgba(37, 46, 52, 0.1);
 }
 
+.hero-sidebar {
+  display: grid;
+  gap: 6px;
+  align-self: start;
+}
+
 .hero-artwork {
   display: flex;
   justify-content: center;
@@ -194,13 +200,9 @@ h2,
 }
 
 .hero-links {
-  grid-column: 1 / 2;
-  position: static;
-  margin-top: 0;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  align-self: start;
 }
 
 .hero-actions {
@@ -353,6 +355,10 @@ h2,
   .hero-footer {
     grid-template-columns: 1fr;
     justify-items: stretch;
+  }
+
+  .hero-sidebar {
+    gap: 10px;
   }
 
   .hero-links,
