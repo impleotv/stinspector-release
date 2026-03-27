@@ -1,7 +1,7 @@
 ﻿const releaseRepo = 'impleotv/stinspector-release';
 const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
 const releasesUrl = `https://github.com/${releaseRepo}/releases`;
-const testFilesName = 'testfiles.zip';
+const demoFilesUrl = `https://github.com/${releaseRepo}/releases/download/v.0.0.0/testfiles.zip`;
 
 const heroActions = document.getElementById('hero-actions');
 const heroLinks = document.getElementById('hero-links');
@@ -138,14 +138,6 @@ function createOlderReleasesLink() {
   return link;
 }
 
-function buildDemoFilesUrl(tagName) {
-  if (!tagName) {
-    return null;
-  }
-
-  return `https://github.com/${releaseRepo}/releases/download/${tagName}/${testFilesName}`;
-}
-
 function createDemoFilesLink(downloadUrl) {
   if (!downloadUrl) {
     return null;
@@ -166,8 +158,7 @@ function renderHeroLinks(release) {
   }
 
   const links = [createOlderReleasesLink()];
-  const demoAsset = release?.assets?.find((asset) => asset.name?.toLowerCase() === testFilesName);
-  const demoFilesLink = createDemoFilesLink(demoAsset?.browser_download_url || buildDemoFilesUrl(release?.tag_name));
+  const demoFilesLink = createDemoFilesLink(demoFilesUrl);
 
   if (demoFilesLink) {
     links.push(demoFilesLink);
@@ -249,3 +240,4 @@ async function loadLatestRelease() {
 }
 
 void loadLatestRelease();
+
