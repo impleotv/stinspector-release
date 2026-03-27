@@ -74,7 +74,7 @@ a {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 16px;
   align-items: center;
   margin-top: 26px;
@@ -194,13 +194,12 @@ h2,
 }
 
 .hero-links {
-  position: absolute;
-  left: 44px;
-  bottom: 28px;
-  flex-direction: column;
+  grid-column: 1 / -1;
+  position: static;
+  margin-top: 4px;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: 18px;
 }
 
 .hero-actions {
@@ -360,11 +359,6 @@ h2,
     justify-content: flex-start;
   }
 
-  .hero-links {
-    position: static;
-    margin-top: 18px;
-  }
-
   .primary-download-card {
     width: 100%;
   }
@@ -400,3 +394,4 @@ h2,
     border-radius: 22px;
   }
 }
+
