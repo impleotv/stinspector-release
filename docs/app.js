@@ -1,7 +1,7 @@
 ﻿const releaseRepo = 'impleotv/stinspector-release';
 const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
 const releasesUrl = `https://github.com/${releaseRepo}/releases`;
-const testFilesName = 'testfiles.zip';
+const testFilesUrl = `https://github.com/${releaseRepo}/releases/download/v.0.0.0/testfiles.zip`;
 
 const heroActions = document.getElementById('hero-actions');
 const heroLinks = document.getElementById('hero-links');
@@ -138,41 +138,22 @@ function createOlderReleasesLink() {
   return link;
 }
 
-function buildDemoFilesUrl(tagName) {
-  if (!tagName) {
-    return null;
-  }
-
-  return `https://github.com/${releaseRepo}/releases/download/${tagName}/${testFilesName}`;
-}
-
-function createDemoFilesLink(downloadUrl) {
-  if (!downloadUrl) {
-    return null;
-  }
-
+function createTestFilesLink() {
   const link = document.createElement('a');
   link.className = 'older-releases-link';
-  link.href = downloadUrl;
+  link.href = testFilesUrl;
   link.target = '_blank';
   link.rel = 'noreferrer';
-  link.textContent = 'Demo files';
+  link.textContent = 'Test Files';
   return link;
 }
 
-function renderHeroLinks(release) {
+function renderHeroLinks() {
   if (!heroLinks) {
     return;
   }
 
-  const links = [createOlderReleasesLink()];
-  const demoAsset = release?.assets?.find((asset) => asset.name?.toLowerCase() === testFilesName);
-  const demoFilesLink = createDemoFilesLink(demoAsset?.browser_download_url || buildDemoFilesUrl(release?.tag_name));
-
-  if (demoFilesLink) {
-    links.push(demoFilesLink);
-  }
-
+  const links = [createOlderReleasesLink(), createTestFilesLink()];
   heroLinks.replaceChildren(...links);
 }
 
@@ -233,7 +214,7 @@ async function loadLatestRelease() {
     }
 
     const release = await response.json();
-    renderHeroLinks(release);
+    renderHeroLinks();
     setReleaseMeta(release.tag_name, release.published_at);
     renderAssets(release.assets || []);
     changelogBody.innerHTML = renderMarkdown(release.body || '');
@@ -249,3 +230,4 @@ async function loadLatestRelease() {
 }
 
 void loadLatestRelease();
+
