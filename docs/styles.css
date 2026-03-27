@@ -165,7 +165,7 @@ h2,
   margin: 0;
 }
 
-.release-meta > div {
+.release-meta div {
   min-width: 0;
   padding: 14px 16px;
   border: 1px solid var(--line);
@@ -185,7 +185,7 @@ h2,
   font-weight: 700;
 }
 
-.meta-links,
+.hero-links,
 .hero-actions {
   display: flex;
   gap: 12px;
@@ -193,14 +193,14 @@ h2,
   align-items: center;
 }
 
-.meta-links {
-  margin-top: 12px;
-  flex-direction: row;
-  align-items: center;
-}
-
-.meta-links .older-releases-link + .older-releases-link {
-  margin-left: 12px;
+.hero-links {
+  position: absolute;
+  left: 44px;
+  bottom: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 18px;
 }
 
 .hero-actions {
@@ -355,9 +355,14 @@ h2,
     justify-items: stretch;
   }
 
-  .meta-links,
+  .hero-links,
   .hero-actions {
     justify-content: flex-start;
+  }
+
+  .hero-links {
+    position: static;
+    margin-top: 18px;
   }
 
   .primary-download-card {
@@ -395,4 +400,3 @@ h2,
     border-radius: 22px;
   }
 }
-
