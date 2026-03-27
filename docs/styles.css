@@ -194,12 +194,13 @@ h2,
 }
 
 .hero-links {
-  grid-column: 1 / -1;
+  grid-column: 1 / 2;
   position: static;
-  margin-top: 4px;
+  margin-top: 0;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  align-self: start;
 }
 
 .hero-actions {
