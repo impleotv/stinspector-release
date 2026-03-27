@@ -185,7 +185,7 @@ h2,
   font-weight: 700;
 }
 
-.hero-links,
+.meta-links,
 .hero-actions {
   display: flex;
   gap: 12px;
@@ -193,14 +193,10 @@ h2,
   align-items: center;
 }
 
-.hero-links {
-  position: absolute;
-  left: 44px;
-  bottom: 28px;
+.meta-links {
+  margin-top: 12px;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: 18px;
 }
 
 .hero-actions {
@@ -355,14 +351,9 @@ h2,
     justify-items: stretch;
   }
 
-  .hero-links,
+  .meta-links,
   .hero-actions {
     justify-content: flex-start;
-  }
-
-  .hero-links {
-    position: static;
-    margin-top: 18px;
   }
 
   .primary-download-card {
@@ -400,3 +391,4 @@ h2,
     border-radius: 22px;
   }
 }
+
