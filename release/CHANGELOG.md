@@ -1,4 +1,40 @@
 ﻿
+<a name="v0.3.0"></a>
+## [v0.3.0](https://github.com/impleotv/stinspector/compare/v0.2.2...v0.3.0) (2026-04-04)
+
+### Chore
+
+* Re-arrange manual
+* Remove placeholders
+* MISB0902 implementation
+* Finalize bin files support
+* Update manual
+* Modify KLV manual
+* Add selection to Klv Windows
+* Update libmisb
+* Add MISMMS page to the manual
+* Modify manual
+* Replace jsonview with an order-preserving JSON tree
+* Fix KlvInjector manual links
+
+### Feat
+
+* Add validation interface
+* Add validation interface
+* Select sync between klv windows
+* Add highlight to Klv window
+* Add raw klv file support
+* Add VMTI decode
+
+### Fix
+
+* Fix validation rules crash
+* Fix color selection
+* Fix inner 0903 101 items
+* Fix nested selection
+* Fix release script
+
+
 <a name="v0.2.2"></a>
 ## [v0.2.2](https://github.com/impleotv/stinspector/compare/v0.2.1...v0.2.2) (2026-03-30)
 
