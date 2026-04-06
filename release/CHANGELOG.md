@@ -1,4 +1,28 @@
 ﻿
+<a name="v0.4.0"></a>
+## [v0.4.0](https://github.com/impleotv/stinspector/compare/v0.3.0...v0.4.0) (2026-04-06)
+
+### Chore
+
+* Skip vmti tests if there is no vmti data
+* Update dependencies
+* Overlay dev and manual
+* ver 0.3.0
+
+### Feat
+
+* Add vmti targets to a map
+* Add VMTI overlay
+* Add compass overlay
+
+### Fix
+
+* Fix validation test for imagery core identifier
+* Fix app crash on some amend files
+* Fix clear archive
+* Fix 'no persisted video PES/PCR timeline rows' as 'no video'
+
+
 <a name="v0.3.0"></a>
 ## [v0.3.0](https://github.com/impleotv/stinspector/compare/v0.2.2...v0.3.0) (2026-04-04)
 
