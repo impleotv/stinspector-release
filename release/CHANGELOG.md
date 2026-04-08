@@ -1,6 +1,30 @@
 ﻿
+<a name="v0.5.1"></a>
+## [v0.5.1](https://github.com/impleotv/stinspector/compare/v0.5.0...v0.5.1) (2026-04-08)
+
+### Chore
+
+* Add demo hash for some ESRI files
+
+
+<a name="v0.5.0"></a>
+## [v0.5.0](https://github.com/impleotv/stinspector/compare/v0.4.1...v0.5.0) (2026-04-08)
+
+### Chore
+
+* Update frontend dependencies
+* Improve archive cleanup
+* Allow showing klv despite reserved pids
+
+### Feat
+
+* Add elevation chart
+* Area and Path
+* Calculate area
+
+
 <a name="v0.4.1"></a>
-## [v0.4.1](https://github.com/impleotv/stinspector/compare/v0.4.0...v0.4.1) (0001-01-01)
+## [v0.4.1](https://github.com/impleotv/stinspector/compare/v0.4.0...v0.4.1) (2026-04-06)
 
 
 <a name="v0.4.0"></a>
