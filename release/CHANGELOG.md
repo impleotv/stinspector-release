@@ -1,4 +1,23 @@
 ﻿
+<a name="v0.5.2"></a>
+## [v0.5.2](https://github.com/impleotv/stinspector/compare/v0.5.1...v0.5.2) (2026-04-09)
+
+### Chore
+
+* Modify license expiration behaviour
+* Update docu version and modify manual
+* Update dependencies
+* ver0.5.1
+
+### Feat
+
+* Add elevation provider selection
+
+### Fix
+
+* Fix frontend error
+
+
 <a name="v0.5.1"></a>
 ## [v0.5.1](https://github.com/impleotv/stinspector/compare/v0.5.0...v0.5.1) (2026-04-08)
 
