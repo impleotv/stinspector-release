@@ -1,4 +1,16 @@
 ﻿
+<a name="v0.6.3"></a>
+## [v0.6.3](https://github.com/impleotv/stinspector/compare/v0.6.2...v0.6.3) (2026-04-13)
+
+### Chore
+
+* ver0.6.2
+
+### Feat
+
+* Add MISB KLV decode validation
+
+
 <a name="v0.6.2"></a>
 ## [v0.6.2](https://github.com/impleotv/stinspector/compare/v0.6.1...v0.6.2) (2026-04-13)
 
