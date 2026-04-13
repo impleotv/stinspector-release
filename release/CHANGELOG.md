@@ -1,4 +1,16 @@
 ﻿
+<a name="v0.6.0"></a>
+## [v0.6.0](https://github.com/impleotv/stinspector/compare/v0.5.2...v0.6.0) (2026-04-13)
+
+### Chore
+
+* Update frontend dependencies
+
+### Feat
+
+* Add heatmap
+
+
 <a name="v0.5.2"></a>
 ## [v0.5.2](https://github.com/impleotv/stinspector/compare/v0.5.1...v0.5.2) (2026-04-09)
 
