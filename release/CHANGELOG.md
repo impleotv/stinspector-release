@@ -1,4 +1,12 @@
 ﻿
+<a name="v0.6.1"></a>
+## [v0.6.1](https://github.com/impleotv/stinspector/compare/v0.6.0...v0.6.1) (2026-04-13)
+
+### Fix
+
+* Fix PES packet lengths validation
+
+
 <a name="v0.6.0"></a>
 ## [v0.6.0](https://github.com/impleotv/stinspector/compare/v0.5.2...v0.6.0) (2026-04-13)
 
