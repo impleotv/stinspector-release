@@ -1,4 +1,17 @@
 ﻿
+<a name="v0.6.2"></a>
+## [v0.6.2](https://github.com/impleotv/stinspector/compare/v0.6.1...v0.6.2) (2026-04-13)
+
+### Chore
+
+* Skip vmti tests if no vmti was found
+* ver0.6.1
+
+### Feat
+
+* Replace player Playbin with the ts pipeline
+
+
 <a name="v0.6.1"></a>
 ## [v0.6.1](https://github.com/impleotv/stinspector/compare/v0.6.0...v0.6.1) (2026-04-13)
 
