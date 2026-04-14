@@ -1,4 +1,14 @@
 ﻿
+<a name="v0.6.6"></a>
+## [v0.6.6](https://github.com/impleotv/stinspector/compare/v0.6.5...v0.6.6) (2026-04-14)
+
+### Chore
+
+* Modify file browse dialog
+*  Limit the height of Recent file sources section
+* Improve loading behaviour, show splash screen earlier
+
+
 <a name="v0.6.5"></a>
 ## [v0.6.5](https://github.com/impleotv/stinspector/compare/v0.6.4...v0.6.5) (2026-04-14)
 
