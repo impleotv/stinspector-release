@@ -1,4 +1,22 @@
 ﻿
+<a name="v0.6.5"></a>
+## [v0.6.5](https://github.com/impleotv/stinspector/compare/v0.6.4...v0.6.5) (2026-04-14)
+
+### Chore
+
+* Open manual in system browser
+* Open manual in a system browser
+
+
+<a name="v0.6.4"></a>
+## [v0.6.4](https://github.com/impleotv/stinspector/compare/v0.6.3...v0.6.4) (2026-04-14)
+
+### Chore
+
+* update dependencies
+* Remove unused gstreamer binaries from the installer
+
+
 <a name="v0.6.3"></a>
 ## [v0.6.3](https://github.com/impleotv/stinspector/compare/v0.6.2...v0.6.3) (2026-04-13)
 
