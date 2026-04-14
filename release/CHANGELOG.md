@@ -1,4 +1,20 @@
 ﻿
+<a name="v0.6.8"></a>
+## [v0.6.8](https://github.com/impleotv/stinspector/compare/v0.6.7...v0.6.8) (2026-04-14)
+
+### Chore
+
+* Revert to fast step first
+
+
+<a name="v0.6.7"></a>
+## [v0.6.7](https://github.com/impleotv/stinspector/compare/v0.6.6...v0.6.7) (2026-04-14)
+
+### Fix
+
+* Fix RVT user data validation
+
+
 <a name="v0.6.6"></a>
 ## [v0.6.6](https://github.com/impleotv/stinspector/compare/v0.6.5...v0.6.6) (2026-04-14)
 
