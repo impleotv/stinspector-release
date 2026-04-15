@@ -1,4 +1,29 @@
 ﻿
+<a name="v0.6.10"></a>
+## [v0.6.10](https://github.com/impleotv/stinspector/compare/v0.6.9...v0.6.10) (2026-04-15)
+
+### Fix
+
+* Fix startup error
+
+
+<a name="v0.6.9"></a>
+## [v0.6.9](https://github.com/impleotv/stinspector/compare/v0.6.8...v0.6.9) (2026-04-15)
+
+### Chore
+
+* Update manual
+* Modify start up behaviour with big archive
+
+### Feat
+
+* Allow partial decode for packets with errors
+
+### Fix
+
+* Fix 1970 timestamp presentation
+
+
 <a name="v0.6.8"></a>
 ## [v0.6.8](https://github.com/impleotv/stinspector/compare/v0.6.7...v0.6.8) (2026-04-14)
 
