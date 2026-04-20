@@ -1,4 +1,23 @@
 ﻿
+<a name="v0.7.0"></a>
+## [v0.7.0](https://github.com/impleotv/stinspector/compare/v0.6.10...v0.7.0) (2026-04-20)
+
+### Chore
+
+* Modify overlay manual
+* Update dependencies
+* Update dependencies
+
+### Feat
+
+* Add packet and frame csv export
+
+### Fix
+
+* Attempt to fix PCR/PTS drift chart
+* Fix export and add manual
+
+
 <a name="v0.6.10"></a>
 ## [v0.6.10](https://github.com/impleotv/stinspector/compare/v0.6.9...v0.6.10) (2026-04-15)
 
