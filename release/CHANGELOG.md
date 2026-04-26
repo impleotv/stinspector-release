@@ -1,4 +1,15 @@
 ﻿
+<a name="v0.7.1"></a>
+## [v0.7.1](https://github.com/impleotv/stinspector/compare/v0.7.0...v0.7.1) (2026-04-26)
+
+### Feat
+
+* Add geo marker
+* Add geo marker
+* Add marker
+* Add overlay marker
+
+
 <a name="v0.7.0"></a>
 ## [v0.7.0](https://github.com/impleotv/stinspector/compare/v0.6.10...v0.7.0) (2026-04-20)
 
