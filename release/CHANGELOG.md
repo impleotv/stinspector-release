@@ -1,4 +1,28 @@
 ﻿
+<a name="v0.7.2"></a>
+## [v0.7.2](https://github.com/impleotv/stinspector/compare/v0.7.1...v0.7.2) (2026-05-07)
+
+### Chore
+
+* Version 0.7.2
+* Modify manual (Amend LS)
+* Update map and marker
+
+### Feat
+
+* Add new validation rules
+* Add Amend Local Set support
+* Make player control per klv pid
+* Report per KLV PID
+
+### Fix
+
+* Fix build bugs
+* Fix area and path map
+* Fix data pid detected as klv pid
+* Fix github upload
+
+
 <a name="v0.7.1"></a>
 ## [v0.7.1](https://github.com/impleotv/stinspector/compare/v0.7.0...v0.7.1) (2026-04-26)
 
