@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   color-scheme: light;
   --background: #f4f1e8;
   --surface: rgba(255, 255, 255, 0.85);
@@ -251,6 +251,44 @@ h2,
   background: var(--accent-soft);
 }
 
+.download-card {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 440px);
+  padding: 18px 20px;
+  border-radius: var(--radius-medium);
+  border: 1px solid rgba(37, 46, 52, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.download-card-heading {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.download-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.install-command {
+  margin: 0;
+  overflow-x: auto;
+  padding: 14px 16px;
+  border-radius: var(--radius-small);
+  background: rgba(31, 45, 54, 0.06);
+  color: var(--text);
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
 .asset-name {
   font-size: 1.1rem;
   margin: 0;
@@ -369,6 +407,10 @@ h2,
   .primary-download-card {
     width: 100%;
   }
+
+  .download-card {
+    width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -378,7 +420,8 @@ h2,
   }
 
   .hero,
-  .primary-download-card {
+  .primary-download-card,
+  .download-card {
     padding: 20px;
   }
 
@@ -401,4 +444,3 @@ h2,
     border-radius: 22px;
   }
 }
-

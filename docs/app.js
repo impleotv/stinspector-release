@@ -1,7 +1,8 @@
-﻿const releaseRepo = 'impleotv/stinspector-release';
+const releaseRepo = 'impleotv/stinspector-release';
 const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
 const releasesUrl = `https://github.com/${releaseRepo}/releases`;
 const demoFilesUrl = `https://github.com/${releaseRepo}/releases/download/v.0.0.0/testfiles.zip`;
+const aptBaseUrl = `https://impleotv.github.io/stinspector-release/apt`;
 
 const heroActions = document.getElementById('hero-actions');
 const heroLinks = document.getElementById('hero-links');
@@ -168,45 +169,123 @@ function renderHeroLinks(release) {
 }
 
 function createPrimaryDownload(asset) {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'primary-download-card';
-
-  const copy = document.createElement('div');
-  copy.innerHTML = `
-    <h3>${asset.name}</h3>
-  `;
-
-  const link = document.createElement('a');
-  link.className = 'button';
-  link.href = asset.browser_download_url;
-  link.target = '_blank';
-  link.rel = 'noreferrer';
-  link.textContent = 'Download Installer';
-
-  const sizeLabel = document.createElement('p');
-  sizeLabel.className = 'download-size';
-  sizeLabel.textContent = `Download size: ${formatBytes(asset.size)}`;
-
-  wrapper.append(copy, link, sizeLabel);
-  heroActions.replaceChildren(wrapper);
+  return createDownloadCard({
+    heading: 'Windows',
+    title: asset.name,
+    description: 'Native Windows installer for desktop installation.',
+    buttonLabel: 'Download Installer',
+    href: asset.browser_download_url,
+    size: asset.size,
+  });
 }
 
-function renderAssets(assets) {
+function createDownloadCard({ heading, title, description, buttonLabel, href, size, codeBlock }) {
+  const wrapper = document.createElement('section');
+  wrapper.className = 'download-card';
+
+  const eyebrow = document.createElement('p');
+  eyebrow.className = 'download-card-heading';
+  eyebrow.textContent = heading;
+
+  const name = document.createElement('h3');
+  name.className = 'asset-name';
+  name.textContent = title;
+
+  const descriptionNode = document.createElement('p');
+  descriptionNode.className = 'download-description';
+  descriptionNode.textContent = description;
+
+  wrapper.append(eyebrow, name, descriptionNode);
+
+  if (href && buttonLabel) {
+    const link = document.createElement('a');
+    link.className = 'button';
+    link.href = href;
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.textContent = buttonLabel;
+    wrapper.append(link);
+  }
+
+  if (Number.isFinite(size) && size > 0) {
+    const sizeLabel = document.createElement('p');
+    sizeLabel.className = 'download-size';
+    sizeLabel.textContent = `Download size: ${formatBytes(size)}`;
+    wrapper.append(sizeLabel);
+  }
+
+  if (codeBlock) {
+    const code = document.createElement('pre');
+    code.className = 'install-command';
+    code.textContent = codeBlock;
+    wrapper.append(code);
+  }
+
+  return wrapper;
+}
+
+function normalizeDebianVersion(tagName) {
+  if (!tagName) {
+    return '';
+  }
+
+  return tagName.startsWith('v') ? tagName.slice(1) : tagName;
+}
+
+function createLinuxDebCard(release, debAsset) {
+  const debVersion = normalizeDebianVersion(release.tag_name);
+  const debUrl = debAsset?.browser_download_url || `${aptBaseUrl}/pool/main/stinspector_${debVersion}_amd64.deb`;
+  const size = debAsset?.size;
+
+  return createDownloadCard({
+    heading: 'Linux .deb',
+    title: debAsset?.name || `stinspector_${debVersion}_amd64.deb`,
+    description: 'Direct Debian or Ubuntu package download for local installation.',
+    buttonLabel: 'Download .deb',
+    href: debUrl,
+    size,
+    codeBlock: 'sudo apt install ./stinspector_<version>_amd64.deb',
+  });
+}
+
+function createLinuxAptCard() {
+  return createDownloadCard({
+    heading: 'Linux APT',
+    title: 'APT repository',
+    description: 'Install and update STANAG4609 Inspector through the signed Debian or Ubuntu repository.',
+    buttonLabel: 'Open APT Repository',
+    href: `${aptBaseUrl}/`,
+    codeBlock: [
+      `curl -fsSL ${aptBaseUrl}/stinspector-apt.gpg | sudo tee /usr/share/keyrings/stinspector-apt.gpg >/dev/null`,
+      `echo "deb [signed-by=/usr/share/keyrings/stinspector-apt.gpg] ${aptBaseUrl}/ stable main" | sudo tee /etc/apt/sources.list.d/stinspector.list`,
+      'sudo apt update',
+      'sudo apt install stinspector',
+    ].join('\n'),
+  });
+}
+
+function renderAssets(release) {
+  const assets = release.assets || [];
   const installerAsset = assets.find((asset) => /installer.*\.exe$/i.test(asset.name))
     || assets.find((asset) => /\.exe$/i.test(asset.name));
+  const debAsset = assets.find((asset) => /\.deb$/i.test(asset.name));
+
+  const cards = [];
+  if (installerAsset) {
+    cards.push(createPrimaryDownload(installerAsset));
+  }
+
+  cards.push(createLinuxDebCard(release, debAsset));
+  cards.push(createLinuxAptCard());
+
+  heroActions.replaceChildren(...cards);
 
   if (installerAsset) {
-    createPrimaryDownload(installerAsset);
     releaseStatus.textContent = '';
     return;
   }
 
-  const emptyState = document.createElement('p');
-  emptyState.className = 'empty-state';
-  emptyState.textContent = 'No installer executable was attached to the latest release.';
-
-  heroActions.replaceChildren(emptyState);
-  releaseStatus.textContent = 'Release found, but no installer asset is available.';
+  releaseStatus.textContent = 'Windows installer asset is not attached to the latest release, but Linux downloads remain available below.';
 }
 
 async function loadLatestRelease() {
@@ -226,7 +305,7 @@ async function loadLatestRelease() {
     const release = await response.json();
     renderHeroLinks(release);
     setReleaseMeta(release.tag_name, release.published_at);
-    renderAssets(release.assets || []);
+    renderAssets(release);
     changelogBody.innerHTML = renderMarkdown(release.body || '');
   } catch (error) {
     const errorState = document.createElement('p');
@@ -240,4 +319,3 @@ async function loadLatestRelease() {
 }
 
 void loadLatestRelease();
-
