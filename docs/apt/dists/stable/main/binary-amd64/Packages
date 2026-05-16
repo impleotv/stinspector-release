@@ -32,3 +32,20 @@ Description: STANAG 4609 inspection desktop application
  Desktop STANAG 4609 inspection application built with Go, Wails, and React.
  Includes the native Linux desktop binary, a shell launcher, and a desktop entry.
 
+Package: stinspector
+Version: 0.8.1
+Architecture: amd64
+Maintainer: ImpleoTV
+Installed-Size: 53292
+Depends: libc6 (>= 2.34), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0t64 (>= 2.79.0), libgstreamer-plugins-base1.0-0 (>= 1.14.0), libgstreamer1.0-0 (>= 1.22.0), libgtk-3-0t64 (>= 3.21.4), libjavascriptcoregtk-4.1-0, libsoup-3.0-0 (>= 2.4.0), libwebkit2gtk-4.1-0 (>= 2.39.91), ffmpeg, gstreamer1.0-plugins-base, gstreamer1.0-plugins-good, gstreamer1.0-libav
+Filename: pool/main/stinspector_0.8.1_amd64.deb
+Size: 29253898
+MD5sum: c1a458f43c4867ef77cc48dc062abfa3
+SHA1: 18459fb62a165a5c9053131e67e9259f95b5632c
+SHA256: dcdb368c1027c2d8195d397533c12cc0b7189bae5d5e1a9a0c35bce53b1b7ae4
+Section: utils
+Priority: optional
+Description: STANAG 4609 inspection desktop application
+ Desktop STANAG 4609 inspection application built with Go, Wails, and React.
+ Includes the native Linux desktop binary, a shell launcher, and a desktop entry.
+
