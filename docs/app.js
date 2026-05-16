@@ -234,17 +234,18 @@ function normalizeDebianVersion(tagName) {
 
 function createLinuxDebCard(release, debAsset) {
   const debVersion = normalizeDebianVersion(release.tag_name);
+  const debFileName = debAsset?.name || `stinspector_${debVersion}_amd64.deb`;
   const debUrl = debAsset?.browser_download_url || `${aptBaseUrl}/pool/main/stinspector_${debVersion}_amd64.deb`;
   const size = debAsset?.size;
 
   return createDownloadCard({
     heading: 'Linux .deb',
-    title: debAsset?.name || `stinspector_${debVersion}_amd64.deb`,
+    title: debFileName,
     description: 'Direct Debian or Ubuntu package download for local installation.',
     buttonLabel: 'Download .deb',
     href: debUrl,
     size,
-    codeBlock: 'sudo apt install ./stinspector_<version>_amd64.deb',
+    codeBlock: `sudo apt install ./${debFileName}`,
   });
 }
 
