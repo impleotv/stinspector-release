@@ -74,18 +74,20 @@ a {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 16px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: stretch;
   margin-top: 26px;
   padding-top: 24px;
   border-top: 1px solid rgba(37, 46, 52, 0.1);
 }
 
 .hero-sidebar {
-  display: grid;
-  gap: 6px;
-  align-self: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .hero-artwork {
@@ -166,7 +168,7 @@ h2,
 
 .release-meta {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(140px, 220px));
   gap: 14px;
   margin: 0;
 }
@@ -201,12 +203,16 @@ h2,
 
 .hero-links {
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .hero-actions {
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  align-items: stretch;
 }
 
 .button {
@@ -235,6 +241,7 @@ h2,
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .older-releases-link:hover {
@@ -244,21 +251,30 @@ h2,
 .primary-download-card {
   display: grid;
   gap: 14px;
-  width: min(100%, 440px);
+  width: 100%;
   padding: 18px 20px;
   border-radius: var(--radius-medium);
   border: 1px solid rgba(201, 92, 43, 0.22);
   background: var(--accent-soft);
+  align-content: start;
+  min-width: 0;
 }
 
 .download-card {
   display: grid;
   gap: 12px;
-  width: min(100%, 440px);
+  width: 100%;
   padding: 18px 20px;
   border-radius: var(--radius-medium);
   border: 1px solid rgba(37, 46, 52, 0.12);
   background: rgba(255, 255, 255, 0.72);
+  align-content: start;
+  min-width: 0;
+}
+
+.primary-download-card .button,
+.download-card .button {
+  width: 100%;
 }
 
 .download-card-heading {
@@ -392,16 +408,26 @@ h2,
 
   .hero-footer {
     grid-template-columns: 1fr;
-    justify-items: stretch;
   }
 
   .hero-sidebar {
     gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
   }
 
   .hero-links,
   .hero-actions {
     justify-content: flex-start;
+  }
+
+  .hero-links {
+    margin-left: 0;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
   }
 
   .primary-download-card {
