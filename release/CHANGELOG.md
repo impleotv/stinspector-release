@@ -1,4 +1,18 @@
 ﻿
+<a name="v0.8.2"></a>
+## [v0.8.2](https://github.com/impleotv/stinspector/compare/v0.7.3...v0.8.2) (2026-05-16)
+
+### Chore
+
+* Build linux version
+* Update version
+
+### Feat
+
+* Add deb
+* Add linux support
+
+
 <a name="v0.7.3"></a>
 ## [v0.7.3](https://github.com/impleotv/stinspector/compare/v0.7.2...v0.7.3) (2026-05-16)
 
