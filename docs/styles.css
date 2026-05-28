@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   color-scheme: light;
   --background: #f4f1e8;
   --surface: rgba(255, 255, 255, 0.85);
@@ -470,4 +470,3 @@ h2,
     border-radius: 22px;
   }
 }
-
