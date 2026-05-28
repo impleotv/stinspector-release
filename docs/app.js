@@ -179,6 +179,35 @@ function createPrimaryDownload(asset) {
   });
 }
 
+function createMacosDownload(dmgAsset) {
+  if (!dmgAsset) {
+    return createDownloadCard({
+      heading: 'macOS',
+      title: 'Disk image (.dmg)',
+      description: 'The macOS release artifact has not been attached to this release yet.',
+      codeBlock: [
+        'Open the published release after the macOS DMG is uploaded.',
+        'Drag StInspector.app into Applications.',
+        'On first launch, use right-click > Open if Gatekeeper blocks the app.',
+      ].join('\n'),
+    });
+  }
+
+  return createDownloadCard({
+    heading: 'macOS',
+    title: dmgAsset.name,
+    description: 'Disk image for drag-and-drop installation on macOS.',
+    buttonLabel: 'Download .dmg',
+    href: dmgAsset.browser_download_url,
+    size: dmgAsset.size,
+    codeBlock: [
+      'Open the .dmg file',
+      'Drag StInspector.app into Applications',
+      'On first launch, use right-click > Open if Gatekeeper blocks the app',
+    ].join('\n'),
+  });
+}
+
 function createDownloadCard({ heading, title, description, buttonLabel, href, size, codeBlock }) {
   const wrapper = document.createElement('section');
   wrapper.className = 'download-card';
@@ -269,24 +298,34 @@ function renderAssets(release) {
   const assets = release.assets || [];
   const installerAsset = assets.find((asset) => /installer.*\.exe$/i.test(asset.name))
     || assets.find((asset) => /\.exe$/i.test(asset.name));
+  const dmgAsset = assets.find((asset) => /\.dmg$/i.test(asset.name));
   const debAsset = assets.find((asset) => /\.deb$/i.test(asset.name));
 
   const cards = [];
   if (installerAsset) {
     cards.push(createPrimaryDownload(installerAsset));
   }
+  cards.push(createMacosDownload(dmgAsset));
 
   cards.push(createLinuxDebCard(release, debAsset));
   cards.push(createLinuxAptCard());
 
   heroActions.replaceChildren(...cards);
 
-  if (installerAsset) {
+  if (installerAsset && dmgAsset) {
     releaseStatus.textContent = '';
     return;
   }
 
-  releaseStatus.textContent = 'Windows installer asset is not attached to the latest release, but Linux downloads remain available below.';
+  const missingAssets = [];
+  if (!installerAsset) {
+    missingAssets.push('Windows installer');
+  }
+  if (!dmgAsset) {
+    missingAssets.push('macOS disk image');
+  }
+
+  releaseStatus.textContent = `${missingAssets.join(' and ')} ${missingAssets.length === 1 ? 'is' : 'are'} not attached to the latest release yet. Linux downloads remain available below.`;
 }
 
 async function loadLatestRelease() {

@@ -1,4 +1,30 @@
 ﻿
+<a name="v1.0.0"></a>
+## [v1.0.0](https://github.com/impleotv/stinspector/compare/v0.8.2...v1.0.0) (2026-05-28)
+
+### Chore
+
+* Windows build
+* Update manual
+* Update manual
+* Update dependencies
+* Replace emoji
+* Replace apple icon
+* Replace icon
+* Modify manual
+* Compile for macOS
+* Build Windows version
+
+### Feat
+
+* Add dmg installer
+
+### Fix
+
+* Fix windows installer
+* Fix child windows close isses
+
+
 <a name="v0.8.2"></a>
 ## [v0.8.2](https://github.com/impleotv/stinspector/compare/v0.7.3...v0.8.2) (2026-05-16)
 
