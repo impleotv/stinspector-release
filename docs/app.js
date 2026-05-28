@@ -1,4 +1,4 @@
-const releaseRepo = 'impleotv/stinspector-release';
+﻿const releaseRepo = 'impleotv/stinspector-release';
 const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
 const releasesUrl = `https://github.com/${releaseRepo}/releases`;
 const demoFilesUrl = `https://github.com/${releaseRepo}/releases/download/v.0.0.0/testfiles.zip`;
@@ -194,16 +194,16 @@ function createMacosDownload(dmgAsset) {
   }
 
   return createDownloadCard({
-    heading: 'macOS',
+    heading: 'mac',
     title: dmgAsset.name,
-    description: 'Disk image for drag-and-drop installation on macOS.',
+    description: 'Disk image for drag-and-drop installation on mac OS.',
     buttonLabel: 'Download .dmg',
     href: dmgAsset.browser_download_url,
     size: dmgAsset.size,
     codeBlock: [
       'Open the .dmg file',
       'Drag StInspector.app into Applications',
-      'On first launch, use right-click > Open if Gatekeeper blocks the app',
+      'The macOS package is currently unsigned. If Gatekeeper blocks the first launch, right-click StInspector.app, select Open, and confirm the prompt. If macOS still blocks the app, allow it once in System Settings > Privacy & Security, then launch it again.'
     ].join('\n'),
   });
 }
@@ -294,6 +294,13 @@ function createLinuxAptCard() {
   });
 }
 
+function createActionRow(cards) {
+  const row = document.createElement('div');
+  row.className = 'hero-action-row';
+  row.replaceChildren(...cards);
+  return row;
+}
+
 function renderAssets(release) {
   const assets = release.assets || [];
   const installerAsset = assets.find((asset) => /installer.*\.exe$/i.test(asset.name))
@@ -301,16 +308,21 @@ function renderAssets(release) {
   const dmgAsset = assets.find((asset) => /\.dmg$/i.test(asset.name));
   const debAsset = assets.find((asset) => /\.deb$/i.test(asset.name));
 
-  const cards = [];
+  const primaryCards = [];
   if (installerAsset) {
-    cards.push(createPrimaryDownload(installerAsset));
+    primaryCards.push(createPrimaryDownload(installerAsset));
   }
-  cards.push(createMacosDownload(dmgAsset));
+  primaryCards.push(createMacosDownload(dmgAsset));
 
-  cards.push(createLinuxDebCard(release, debAsset));
-  cards.push(createLinuxAptCard());
+  const linuxCards = [
+    createLinuxDebCard(release, debAsset),
+    createLinuxAptCard(),
+  ];
 
-  heroActions.replaceChildren(...cards);
+  heroActions.replaceChildren(
+    createActionRow(primaryCards),
+    createActionRow(linuxCards),
+  );
 
   if (installerAsset && dmgAsset) {
     releaseStatus.textContent = '';
@@ -359,3 +371,4 @@ async function loadLatestRelease() {
 }
 
 void loadLatestRelease();
+
