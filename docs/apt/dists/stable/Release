@@ -1,0 +1,24 @@
+Origin: StInspector
+Label: StInspector
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: STANAG4609 Inspector APT repository
+Date: Fri, 29 May 2026 12:18:14 +0000
+MD5Sum:
+ ba11a454131e0d07be4fae56fd88dabe               38 Release
+ 17a216099c85ca52e39d759162c9f3d1             5592 main/binary-amd64/Packages
+ 9482f160c95f4a00881cb893270d6bc0             1138 main/binary-amd64/Packages.gz
+SHA1:
+ 734155183e7e79f4675842d9994c8f4fb4e3e163               38 Release
+ 412148781c03aeff526a3652664b818240698916             5592 main/binary-amd64/Packages
+ 173cf651e4040004f8ef7a27420cb5c96a6b80b6             1138 main/binary-amd64/Packages.gz
+SHA256:
+ 95390dab6d3b0b8d9c81076fe02201576b222f2cc08f43323e08607d8b9c45b1               38 Release
+ 34006b32c05fe2f7e52d90c346d4e6c992de87434040f0b0ee4f2bccb684e334             5592 main/binary-amd64/Packages
+ c9a551de8527af85699d2cb4c01d9cf11c7d005c67fb943bb3aef549fbe1e43f             1138 main/binary-amd64/Packages.gz
+SHA512:
+ a5faecc6d2aeed1262d83cae4df78bede6711359f05d7c1fb1a52f0943240bfba6606ce188d38baa600c3929ec2e15a7232b42cf8a94902879884e66b488f2c1               38 Release
+ 576860b118fbff0aaa97519b47706f33362d74ffe23e94c2dbb46805be35d1accbf33ef9b6eb380fc9a6705ed9fdf7dffcef7a0b2251bac3d67fc3001802b8b2             5592 main/binary-amd64/Packages
+ 77ae0d7d575d8789f1fa64379036cc3c1fb8a2d58f51cdc2c64fa66b5dceee0518064c2e71f19b4683da82664111f51c741df557385c04fb09288fd9a963feb6             1138 main/binary-amd64/Packages.gz
