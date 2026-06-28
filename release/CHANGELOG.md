@@ -1,4 +1,12 @@
 ﻿
+<a name="v1.1.1"></a>
+## [v1.1.1](https://github.com/impleotv/stinspector/compare/v1.1.0...v1.1.1) (2026-06-28)
+
+### Fix
+
+* Fix Updater
+
+
 <a name="v1.1.0"></a>
 ## [v1.1.0](https://github.com/impleotv/stinspector/compare/v1.0.2...v1.1.0) (2026-06-28)
 
