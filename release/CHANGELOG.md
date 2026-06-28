@@ -1,4 +1,8 @@
 ﻿
+<a name="v1.1.4"></a>
+## [v1.1.4](https://github.com/impleotv/stinspector/compare/v1.1.3...v1.1.4) (0001-01-01)
+
+
 <a name="v1.1.3"></a>
 ## [v1.1.3](https://github.com/impleotv/stinspector/compare/v1.1.2...v1.1.3) (2026-06-28)
 
