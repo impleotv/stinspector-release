@@ -1,4 +1,4 @@
-﻿const releaseRepo = 'impleotv/stinspector-release';
+const releaseRepo = 'impleotv/stinspector-release';
 const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
 const releasesUrl = `https://github.com/${releaseRepo}/releases`;
 const demoFilesUrl = `https://github.com/${releaseRepo}/releases/download/v.0.0.0/testfiles.zip`;
@@ -371,4 +371,3 @@ async function loadLatestRelease() {
 }
 
 void loadLatestRelease();
-
