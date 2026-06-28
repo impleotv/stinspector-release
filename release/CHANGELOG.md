@@ -1,4 +1,12 @@
 ﻿
+<a name="v1.1.3"></a>
+## [v1.1.3](https://github.com/impleotv/stinspector/compare/v1.1.2...v1.1.3) (2026-06-28)
+
+### Fix
+
+* Fix Windows updater
+
+
 <a name="v1.1.2"></a>
 ## [v1.1.2](https://github.com/impleotv/stinspector/compare/v1.1.1...v1.1.2) (2026-06-28)
 
