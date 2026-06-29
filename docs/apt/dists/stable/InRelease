@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: StInspector
+Label: StInspector
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: STANAG4609 Inspector APT repository
+Date: Mon, 29 Jun 2026 13:34:36 +0000
+MD5Sum:
+ e649ab3b38588333637ef7abf2f035f1               38 Release
+ b90e35515dd46fa67c13641da8dce76b             7456 main/binary-amd64/Packages
+ a816efc3fb6fa49d434ad00f997c3c81             1362 main/binary-amd64/Packages.gz
+SHA1:
+ e89a1e14abeff3f5736ef5f8a6c2513609e63fc4               38 Release
+ a3821a45789c9cc36ff2569bff0c4b935e26b8ea             7456 main/binary-amd64/Packages
+ a7210b3f8c2083109ee9cf9b57a7e082c0feeb50             1362 main/binary-amd64/Packages.gz
+SHA256:
+ 7c0fcd20061415686276eeb3a381a88baabd126cd41e40b2ca9a833056bdeb0d               38 Release
+ ef03ebe4cccb22f4254510098bab7ddb65730f4b03bd6149d63002193aecbeb3             7456 main/binary-amd64/Packages
+ a84aa90c99e68df63d400e145ba37873fe19afd940fc642288d4047c70330b97             1362 main/binary-amd64/Packages.gz
+SHA512:
+ 9d7609bef09aac1f30d476e08dec59b68057ebaa82dea0b4dec14bcea30656025cc5bdecdf278594ab54a2a3146fa92f2e263c81cd60c593d3666faa347734ee               38 Release
+ 426464271ff7f89439ed908d2fde6f3c3c60ff73081f360188c08b5d88c3a61a0f628d9889a948575f58be116460364870d2286d86ac0e93272708e0b61522c1             7456 main/binary-amd64/Packages
+ a0faaa66bc0f87c9a238188f03d581437b3d491e4d3b859e951914576dfd4757daab0401b6994e363edd3fe553e80a50866ed8c4f204e491199666f76c99c0e9             1362 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEY4Y1GggWJiQtM0zGgE8gZ9dPYEYFAmpCdG0ACgkQgE8gZ9dP
+YEYrnBAAmSoQbsw6VEsxU0C9+Jkh2vdicJkcQkBfBOLLxROP2rbtIjw4Y30294tq
+xXku7I0zyfmHf2x9h+aOFPpPr4271ZLfl+OPYXrZaYC16yAFG1rWEW+cEF/KuvXU
+gfRUuU2pEWw0Jg264ztpDpU+zdiJSEMlhyzvwAu1gATWn0c/QVO5YIl+EIp7vYfm
+h3Kz6OkC33wMVesLoF+jAkH0Jp118ncLzaPID7foDawxG78m7LMAQ8ggF1EBkLQW
+o+N+8k4pieX8QTb1OVi/wkvM+B6TPX3WvGCuRqhR++194SESJtTBJllrKMSebpj8
+udAfAdALJYf86NEbyj4nYjC8ZWGnQ2BQDcuxU85eHTRqTn2U++YluJEaDshT43of
+dWFSWFwygakxWsPqSgtcS5h8IlNxndDe++q8nCyx/omPAtf77u+pXAUGmFVYg7sD
++XZU03QUJdU1b42dFAv7E23EKyZiRlt8/4ZsEt0wQ0Xmj3DX70/F0pAJHHWRmOjM
+p1RKh/Lqfnlu01rCfqZ60Sbhb6wRPfdmjUUWTDUcBvjbmK9wOCWQlx9jcoIhR0e+
+QltSbyXswMR+33v/1/h09abmfxFhpysHktsrQ3rkqiej/zIGjHgCHckvEtxrmceJ
+kqXD4H8Uahy812SzPxrXRlofJskn+cOI7CQ89o1JW7nY8I+12Ko=
+=hPGD
+-----END PGP SIGNATURE-----
