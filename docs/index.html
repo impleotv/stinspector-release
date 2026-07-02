@@ -1,11 +1,492 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STANAG4609 Inspector Downloads</title>
   <meta name="description" content="Latest STANAG4609 Inspector release downloads and release notes.">
-  <link rel="stylesheet" href="./styles.css?v=20260528a">
+  <style>
+:root {
+  color-scheme: light;
+  --background: #f4f1e8;
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-strong: #fffdf8;
+  --line: rgba(37, 46, 52, 0.14);
+  --text: #1f2d36;
+  --muted: #58656c;
+  --accent: #c95c2b;
+  --accent-strong: #a84518;
+  --accent-soft: rgba(201, 92, 43, 0.14);
+  --shadow: 0 18px 48px rgba(38, 46, 51, 0.12);
+  --radius-large: 28px;
+  --radius-medium: 18px;
+  --radius-small: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(201, 92, 43, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(49, 124, 120, 0.16), transparent 32%),
+    linear-gradient(180deg, #fbf7ee 0%, var(--background) 100%);
+  color: var(--text);
+  font-family: "Segoe UI", "Aptos", system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(1120px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 44px 44px 78px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background:
+    radial-gradient(circle at top center, rgba(201, 92, 43, 0.12), transparent 32%),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.97), rgba(255, 247, 234, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -8% -18% auto;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 92, 43, 0.18), transparent 70%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.hero-footer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(37, 46, 52, 0.1);
+}
+
+.hero-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.hero-artwork {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 12px 0 18px;
+}
+
+.hero-artwork img {
+  display: block;
+  width: min(100%, 860px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+  box-shadow: 0 26px 60px rgba(38, 46, 51, 0.16);
+  border: 1px solid rgba(37, 46, 52, 0.06);
+  background: rgba(255, 255, 255, 0.82);
+  opacity: 0;
+  transform: translateY(10px) scale(0.985);
+  animation: hero-image-fade 780ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards;
+}
+
+@keyframes hero-image-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.eyebrow,
+.release-meta dt {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+h2,
+.asset-name,
+.changelog-details summary {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.lede,
+.release-status {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.lede {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 0.98rem;
+  font-style: italic;
+}
+
+.manual-link-row {
+  margin: 10px 0 0;
+}
+
+.manual-link {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.manual-link:hover {
+  color: var(--accent);
+}
+
+.release-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 220px));
+  gap: 14px;
+  margin: 0;
+}
+
+.release-meta div {
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.release-meta dt,
+.release-meta dd {
+  margin: 0;
+}
+
+.release-meta dd {
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.hero-links,
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-links {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.hero-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.hero-action-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--accent);
+  color: #fffaf4;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  background: var(--accent-strong);
+}
+
+.older-releases-link {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.older-releases-link:hover {
+  color: var(--accent-strong);
+}
+
+.primary-download-card {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: var(--radius-medium);
+  border: 1px solid rgba(201, 92, 43, 0.22);
+  background: var(--accent-soft);
+  align-content: start;
+  min-width: 0;
+}
+
+.download-card {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: var(--radius-medium);
+  border: 1px solid rgba(37, 46, 52, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  align-content: start;
+  min-width: 0;
+}
+
+.primary-download-card .button,
+.download-card .button {
+  width: 100%;
+}
+
+.download-card-heading {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.download-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.install-command {
+  margin: 0;
+  overflow-x: auto;
+  padding: 14px 16px;
+  border-radius: var(--radius-small);
+  background: rgba(31, 45, 54, 0.06);
+  color: var(--text);
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.asset-name {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.download-size {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.release-status:empty {
+  display: none;
+}
+
+.changelog-panel {
+  margin-top: 22px;
+  padding: 0 4px;
+}
+
+.changelog-details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.changelog-details summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 26px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.changelog-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.changelog-details[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.changelog-body {
+  padding: 22px 26px 26px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.changelog-body h2,
+.changelog-body h3 {
+  margin: 1.2em 0 0.45em;
+  color: var(--text);
+}
+
+.changelog-body h2:first-child,
+.changelog-body h3:first-child,
+.changelog-body p:first-child,
+.changelog-body ul:first-child {
+  margin-top: 0;
+}
+
+.changelog-body ul {
+  margin: 0.4em 0 1.1em;
+  padding-left: 20px;
+}
+
+.changelog-body code {
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: rgba(31, 45, 54, 0.08);
+}
+
+.changelog-body a {
+  color: var(--accent-strong);
+}
+
+.empty-state,
+.error-state {
+  padding: 16px 18px;
+  border-radius: var(--radius-medium);
+}
+
+.empty-state {
+  border: 1px dashed var(--line);
+  color: var(--muted);
+}
+
+.error-state {
+  border: 1px solid rgba(169, 63, 31, 0.2);
+  background: rgba(169, 63, 31, 0.08);
+  color: #7a2a14;
+}
+
+@media (max-width: 860px) {
+  .release-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-sidebar {
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-links,
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .hero-links {
+    margin-left: 0;
+  }
+
+  .hero-action-row {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-download-card {
+    width: 100%;
+  }
+
+  .download-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100vw - 20px, 1120px);
+    padding-top: 10px;
+  }
+
+  .hero,
+  .primary-download-card,
+  .download-card {
+    padding: 20px;
+  }
+
+  .hero {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .hero-artwork img {
+    width: min(100%, 720px);
+  }
+
+  .changelog-details summary,
+  .changelog-body {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero {
+    border-radius: 22px;
+  }
+}
+
+  </style>
 </head>
 <body>
   <div class="page-shell">
@@ -21,34 +502,432 @@
         <p class="manual-link-row">
           <a class="manual-link" href="https://impleotv.com/content/stinspector/help/index.html" target="_blank" rel="noreferrer">Application Manual</a>
         </p>
-        <p class="release-status" id="release-status">Loading latest release details...</p>
+        <p class="release-status" id="release-status">Loading latest release details. If they do not appear, open GitHub releases.</p>
       </div>
       <div class="hero-footer">
         <div class="hero-sidebar">
           <dl class="release-meta" id="release-meta">
             <div>
               <dt>Version</dt>
-              <dd>Loading...</dd>
+              <dd>See GitHub</dd>
             </div>
             <div>
               <dt>Released</dt>
-              <dd>Loading...</dd>
+              <dd>See GitHub</dd>
             </div>
           </dl>
-          <div class="hero-links" id="hero-links"></div>
+          <div class="hero-links" id="hero-links">
+            <a class="older-releases-link" href="https://github.com/impleotv/stinspector-release/releases" target="_blank" rel="noreferrer">GitHub Releases</a>
+          </div>
         </div>
-        <div class="hero-actions" id="hero-actions"></div>
+        <div class="hero-actions" id="hero-actions">
+          <div class="hero-action-row">
+            <section class="download-card">
+              <p class="download-card-heading">Linux APT</p>
+              <h3 class="asset-name">APT repository</h3>
+              <p class="download-description">Install and update STANAG4609 Inspector through the signed Debian or Ubuntu repository.</p>
+              <a class="button" href="https://impleotv.github.io/stinspector-release/apt/" target="_blank" rel="noreferrer">Open APT Repository</a>
+            </section>
+            <section class="download-card">
+              <p class="download-card-heading">All Platforms</p>
+              <h3 class="asset-name">GitHub release assets</h3>
+              <p class="download-description">Open the latest public release assets if this page cannot load live release details.</p>
+              <a class="button" href="https://github.com/impleotv/stinspector-release/releases/latest" target="_blank" rel="noreferrer">Open Latest Release</a>
+            </section>
+          </div>
+        </div>
       </div>
     </header>
 
     <section class="changelog-panel">
       <details class="changelog-details" id="changelog-details">
         <summary>Latest changelog</summary>
-        <div class="changelog-body" id="changelog-body">Loading changelog...</div>
+        <div class="changelog-body" id="changelog-body">
+          <p>Open the latest GitHub release to view changelog details if they do not load here automatically.</p>
+        </div>
       </details>
+      <noscript>
+        <p class="error-state">Release details require JavaScript. Open the GitHub releases link for downloads.</p>
+      </noscript>
     </section>
   </div>
 
-  <script src="./app.js?v=20260528a" defer></script>
+  <script>
+const releaseRepo = 'impleotv/stinspector-release';
+const apiUrl = `https://api.github.com/repos/${releaseRepo}/releases/latest`;
+const releasesUrl = `https://github.com/${releaseRepo}/releases`;
+const demoFilesUrl = `https://github.com/${releaseRepo}/releases/download/v.0.0.0/testfiles.zip`;
+const aptBaseUrl = `https://impleotv.github.io/stinspector-release/apt`;
+
+const heroActions = document.getElementById('hero-actions');
+const heroLinks = document.getElementById('hero-links');
+const releaseStatus = document.getElementById('release-status');
+const releaseMeta = document.getElementById('release-meta');
+const changelogBody = document.getElementById('changelog-body');
+
+function formatBytes(bytes) {
+  if (!Number.isFinite(bytes) || bytes <= 0) {
+    return 'Unknown size';
+  }
+
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let value = bytes;
+  let unitIndex = 0;
+  while (value >= 1024 && unitIndex < units.length - 1) {
+    value /= 1024;
+    unitIndex += 1;
+  }
+
+  return `${value.toFixed(value >= 10 || unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
+}
+
+function formatDate(isoDate) {
+  if (!isoDate) {
+    return 'Unknown';
+  }
+
+  const value = new Date(isoDate);
+  if (Number.isNaN(value.getTime())) {
+    return isoDate;
+  }
+
+  return value.toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+function escapeHtml(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function renderMarkdown(markdown) {
+  if (!markdown || !markdown.trim()) {
+    return '<p class="empty-state">Release notes were not provided for this version.</p>';
+  }
+
+  const sanitizedMarkdown = markdown
+    .replace(/<a\s+name="[^"]+"\s*><\/a>\s*/gi, '')
+    .replace(/^<a\s+name="[^"]+"\s*><\/a>\s*$/gim, '')
+    .trim();
+
+  const escaped = escapeHtml(sanitizedMarkdown);
+  const lines = escaped.split(/\r?\n/);
+  let html = '';
+  let listOpen = false;
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) {
+      if (listOpen) {
+        html += '</ul>';
+        listOpen = false;
+      }
+      continue;
+    }
+
+    if (line.startsWith('### ')) {
+      if (listOpen) {
+        html += '</ul>';
+        listOpen = false;
+      }
+      html += `<h3>${line.slice(4)}</h3>`;
+      continue;
+    }
+
+    if (line.startsWith('## ')) {
+      if (listOpen) {
+        html += '</ul>';
+        listOpen = false;
+      }
+      html += `<h2>${line.slice(3)}</h2>`;
+      continue;
+    }
+
+    if (line.startsWith('* ')) {
+      if (!listOpen) {
+        html += '<ul>';
+        listOpen = true;
+      }
+      html += `<li>${line.slice(2)}</li>`;
+      continue;
+    }
+
+    if (listOpen) {
+      html += '</ul>';
+      listOpen = false;
+    }
+
+    html += `<p>${line}</p>`;
+  }
+
+  if (listOpen) {
+    html += '</ul>';
+  }
+
+  return html.replaceAll(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
+}
+
+function setReleaseMeta(version, releasedAt) {
+  const items = releaseMeta?.querySelectorAll('dd');
+  if (!items || items.length < 2) {
+    return;
+  }
+
+  items[0].textContent = version || 'Unknown';
+  items[1].textContent = formatDate(releasedAt);
+}
+
+function createOlderReleasesLink() {
+  const link = document.createElement('a');
+  link.className = 'older-releases-link';
+  link.href = releasesUrl;
+  link.target = '_blank';
+  link.rel = 'noreferrer';
+  link.textContent = 'Older Releases';
+  return link;
+}
+
+function createDemoFilesLink(downloadUrl) {
+  if (!downloadUrl) {
+    return null;
+  }
+
+  const link = document.createElement('a');
+  link.className = 'older-releases-link';
+  link.href = downloadUrl;
+  link.target = '_blank';
+  link.rel = 'noreferrer';
+  link.textContent = 'Demo files';
+  return link;
+}
+
+function renderHeroLinks(release) {
+  if (!heroLinks) {
+    return;
+  }
+
+  const links = [createOlderReleasesLink()];
+  const demoFilesLink = createDemoFilesLink(demoFilesUrl);
+
+  if (demoFilesLink) {
+    links.push(demoFilesLink);
+  }
+
+  heroLinks.replaceChildren(...links);
+}
+
+function createPrimaryDownload(asset) {
+  return createDownloadCard({
+    heading: 'Windows',
+    title: asset.name,
+    description: 'Native Windows installer for desktop installation.',
+    buttonLabel: 'Download Installer',
+    href: asset.browser_download_url,
+    size: asset.size,
+  });
+}
+
+function createMacosDownload(dmgAsset) {
+  if (!dmgAsset) {
+    return createDownloadCard({
+      heading: 'macOS',
+      title: 'Disk image (.dmg)',
+      description: 'The macOS release artifact has not been attached to this release yet.',
+      codeBlock: [
+        'Open the published release after the macOS DMG is uploaded.',
+        'Drag StInspector.app into Applications.',
+        'On first launch, use right-click > Open if Gatekeeper blocks the app.',
+      ].join('\n'),
+    });
+  }
+
+  return createDownloadCard({
+    heading: 'mac',
+    title: dmgAsset.name,
+    description: 'Disk image for drag-and-drop installation on mac OS.',
+    buttonLabel: 'Download .dmg',
+    href: dmgAsset.browser_download_url,
+    size: dmgAsset.size,
+    codeBlock: [
+      'Open the .dmg file',
+      'Drag StInspector.app into Applications',
+      'The macOS package is currently unsigned. If Gatekeeper blocks the first launch, right-click StInspector.app, select Open, and confirm the prompt. If macOS still blocks the app, allow it once in System Settings > Privacy & Security, then launch it again.'
+    ].join('\n'),
+  });
+}
+
+function createDownloadCard({ heading, title, description, buttonLabel, href, size, codeBlock }) {
+  const wrapper = document.createElement('section');
+  wrapper.className = 'download-card';
+
+  const eyebrow = document.createElement('p');
+  eyebrow.className = 'download-card-heading';
+  eyebrow.textContent = heading;
+
+  const name = document.createElement('h3');
+  name.className = 'asset-name';
+  name.textContent = title;
+
+  const descriptionNode = document.createElement('p');
+  descriptionNode.className = 'download-description';
+  descriptionNode.textContent = description;
+
+  wrapper.append(eyebrow, name, descriptionNode);
+
+  if (href && buttonLabel) {
+    const link = document.createElement('a');
+    link.className = 'button';
+    link.href = href;
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.textContent = buttonLabel;
+    wrapper.append(link);
+  }
+
+  if (Number.isFinite(size) && size > 0) {
+    const sizeLabel = document.createElement('p');
+    sizeLabel.className = 'download-size';
+    sizeLabel.textContent = `Download size: ${formatBytes(size)}`;
+    wrapper.append(sizeLabel);
+  }
+
+  if (codeBlock) {
+    const code = document.createElement('pre');
+    code.className = 'install-command';
+    code.textContent = codeBlock;
+    wrapper.append(code);
+  }
+
+  return wrapper;
+}
+
+function normalizeDebianVersion(tagName) {
+  if (!tagName) {
+    return '';
+  }
+
+  return tagName.startsWith('v') ? tagName.slice(1) : tagName;
+}
+
+function createLinuxDebCard(release, debAsset) {
+  const debVersion = normalizeDebianVersion(release.tag_name);
+  const debFileName = debAsset?.name || `stinspector_${debVersion}_amd64.deb`;
+  const debUrl = debAsset?.browser_download_url || `${aptBaseUrl}/pool/main/stinspector_${debVersion}_amd64.deb`;
+  const size = debAsset?.size;
+
+  return createDownloadCard({
+    heading: 'Linux .deb',
+    title: debFileName,
+    description: 'Direct Debian or Ubuntu package download for local installation.',
+    buttonLabel: 'Download .deb',
+    href: debUrl,
+    size,
+    codeBlock: `sudo apt install ./${debFileName}`,
+  });
+}
+
+function createLinuxAptCard() {
+  return createDownloadCard({
+    heading: 'Linux APT',
+    title: 'APT repository',
+    description: 'Install and update STANAG4609 Inspector through the signed Debian or Ubuntu repository.',
+    buttonLabel: 'Open APT Repository',
+    href: `${aptBaseUrl}/`,
+    codeBlock: [
+      `curl -fsSL ${aptBaseUrl}/stinspector-apt.gpg | sudo tee /usr/share/keyrings/stinspector-apt.gpg >/dev/null`,
+      `echo "deb [signed-by=/usr/share/keyrings/stinspector-apt.gpg] ${aptBaseUrl}/ stable main" | sudo tee /etc/apt/sources.list.d/stinspector.list`,
+      'sudo apt update',
+      'sudo apt install stinspector',
+    ].join('\n'),
+  });
+}
+
+function createActionRow(cards) {
+  const row = document.createElement('div');
+  row.className = 'hero-action-row';
+  row.replaceChildren(...cards);
+  return row;
+}
+
+function renderAssets(release) {
+  const assets = release.assets || [];
+  const installerAsset = assets.find((asset) => /installer.*\.exe$/i.test(asset.name))
+    || assets.find((asset) => /\.exe$/i.test(asset.name));
+  const dmgAsset = assets.find((asset) => /\.dmg$/i.test(asset.name));
+  const debAsset = assets.find((asset) => /\.deb$/i.test(asset.name));
+
+  const primaryCards = [];
+  if (installerAsset) {
+    primaryCards.push(createPrimaryDownload(installerAsset));
+  }
+  primaryCards.push(createMacosDownload(dmgAsset));
+
+  const linuxCards = [
+    createLinuxDebCard(release, debAsset),
+    createLinuxAptCard(),
+  ];
+
+  heroActions.replaceChildren(
+    createActionRow(primaryCards),
+    createActionRow(linuxCards),
+  );
+
+  if (installerAsset && dmgAsset) {
+    releaseStatus.textContent = '';
+    return;
+  }
+
+  const missingAssets = [];
+  if (!installerAsset) {
+    missingAssets.push('Windows installer');
+  }
+  if (!dmgAsset) {
+    missingAssets.push('macOS disk image');
+  }
+
+  releaseStatus.textContent = `${missingAssets.join(' and ')} ${missingAssets.length === 1 ? 'is' : 'are'} not attached to the latest release yet. Linux downloads remain available below.`;
+}
+
+async function loadLatestRelease() {
+  try {
+    renderHeroLinks();
+
+    const response = await fetch(apiUrl, {
+      headers: {
+        Accept: 'application/vnd.github+json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`GitHub API returned ${response.status}`);
+    }
+
+    const release = await response.json();
+    renderHeroLinks(release);
+    setReleaseMeta(release.tag_name, release.published_at);
+    renderAssets(release);
+    changelogBody.innerHTML = renderMarkdown(release.body || '');
+  } catch (error) {
+    const errorState = document.createElement('p');
+    errorState.className = 'error-state';
+    errorState.textContent = 'Release assets are temporarily unavailable.';
+
+    heroActions.replaceChildren(errorState);
+    releaseStatus.textContent = error instanceof Error ? error.message : 'Unable to load the latest release.';
+    changelogBody.innerHTML = `<p class="error-state">${error instanceof Error ? error.message : 'Unable to load the latest release.'}</p>`;
+  }
+}
+
+void loadLatestRelease();
+
+  </script>
 </body>
 </html>
+

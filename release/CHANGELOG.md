@@ -1,10 +1,28 @@
+﻿
+<a name="v1.2.0"></a>
+## [v1.2.0](https://github.com/impleotv/stinspector/compare/v1.1.4...v1.2.0) (2026-07-01)
+
+### Chore
+
+* Improve manual
+* Modify manual main page
+* ver1.1.4
+
+### Feat
+
+* Add pcap support
+
+### Fix
+
+* Fix Linux install
+
 
 <a name="v1.1.4"></a>
-## v1.1.4 (2026-06-28)
+## [v1.1.4](https://github.com/impleotv/stinspector/compare/v1.1.3...v1.1.4) (2026-06-28)
 
 
 <a name="v1.1.3"></a>
-## v1.1.3 (2026-06-28)
+## [v1.1.3](https://github.com/impleotv/stinspector/compare/v1.1.2...v1.1.3) (2026-06-28)
 
 ### Fix
 
@@ -12,7 +30,7 @@
 
 
 <a name="v1.1.2"></a>
-## v1.1.2 (2026-06-28)
+## [v1.1.2](https://github.com/impleotv/stinspector/compare/v1.1.1...v1.1.2) (2026-06-28)
 
 ### Chore
 
@@ -21,7 +39,7 @@
 
 
 <a name="v1.1.1"></a>
-## v1.1.1 (2026-06-28)
+## [v1.1.1](https://github.com/impleotv/stinspector/compare/v1.1.0...v1.1.1) (2026-06-28)
 
 ### Fix
 
@@ -29,7 +47,7 @@
 
 
 <a name="v1.1.0"></a>
-## v1.1.0 (2026-06-28)
+## [v1.1.0](https://github.com/impleotv/stinspector/compare/v1.0.2...v1.1.0) (2026-06-28)
 
 ### Chore
 
@@ -41,7 +59,7 @@
 
 
 <a name="v1.0.2"></a>
-## v1.0.2 (2026-06-28)
+## [v1.0.2](https://github.com/impleotv/stinspector/compare/v1.0.1...v1.0.2) (2026-06-28)
 
 ### Chore
 
@@ -64,7 +82,7 @@
 
 
 <a name="v1.0.1"></a>
-## v1.0.1 (2026-05-29)
+## [v1.0.1](https://github.com/impleotv/stinspector/compare/v1.0.0...v1.0.1) (2026-05-29)
 
 ### Chore
 
@@ -82,7 +100,7 @@
 
 
 <a name="v1.0.0"></a>
-## v1.0.0 (2026-05-28)
+## [v1.0.0](https://github.com/impleotv/stinspector/compare/v0.8.2...v1.0.0) (2026-05-28)
 
 ### Chore
 
@@ -112,7 +130,7 @@
 
 
 <a name="v0.8.2"></a>
-## v0.8.2 (2026-05-16)
+## [v0.8.2](https://github.com/impleotv/stinspector/compare/v0.7.3...v0.8.2) (2026-05-16)
 
 ### Chore
 
@@ -126,7 +144,7 @@
 
 
 <a name="v0.7.3"></a>
-## v0.7.3 (2026-05-16)
+## [v0.7.3](https://github.com/impleotv/stinspector/compare/v0.7.2...v0.7.3) (2026-05-16)
 
 ### Chore
 
@@ -139,7 +157,7 @@
 
 
 <a name="v0.7.2"></a>
-## v0.7.2 (2026-05-07)
+## [v0.7.2](https://github.com/impleotv/stinspector/compare/v0.7.1...v0.7.2) (2026-05-07)
 
 ### Chore
 
@@ -163,7 +181,7 @@
 
 
 <a name="v0.7.1"></a>
-## v0.7.1 (2026-04-26)
+## [v0.7.1](https://github.com/impleotv/stinspector/compare/v0.7.0...v0.7.1) (2026-04-26)
 
 ### Feat
 
@@ -174,7 +192,7 @@
 
 
 <a name="v0.7.0"></a>
-## v0.7.0 (2026-04-20)
+## [v0.7.0](https://github.com/impleotv/stinspector/compare/v0.6.10...v0.7.0) (2026-04-20)
 
 ### Chore
 
@@ -193,7 +211,7 @@
 
 
 <a name="v0.6.10"></a>
-## v0.6.10 (2026-04-15)
+## [v0.6.10](https://github.com/impleotv/stinspector/compare/v0.6.9...v0.6.10) (2026-04-15)
 
 ### Fix
 
@@ -201,7 +219,7 @@
 
 
 <a name="v0.6.9"></a>
-## v0.6.9 (2026-04-15)
+## [v0.6.9](https://github.com/impleotv/stinspector/compare/v0.6.8...v0.6.9) (2026-04-15)
 
 ### Chore
 
@@ -218,7 +236,7 @@
 
 
 <a name="v0.6.8"></a>
-## v0.6.8 (2026-04-14)
+## [v0.6.8](https://github.com/impleotv/stinspector/compare/v0.6.7...v0.6.8) (2026-04-14)
 
 ### Chore
 
@@ -226,7 +244,7 @@
 
 
 <a name="v0.6.7"></a>
-## v0.6.7 (2026-04-14)
+## [v0.6.7](https://github.com/impleotv/stinspector/compare/v0.6.6...v0.6.7) (2026-04-14)
 
 ### Fix
 
@@ -234,7 +252,7 @@
 
 
 <a name="v0.6.6"></a>
-## v0.6.6 (2026-04-14)
+## [v0.6.6](https://github.com/impleotv/stinspector/compare/v0.6.5...v0.6.6) (2026-04-14)
 
 ### Chore
 
@@ -244,7 +262,7 @@
 
 
 <a name="v0.6.5"></a>
-## v0.6.5 (2026-04-14)
+## [v0.6.5](https://github.com/impleotv/stinspector/compare/v0.6.4...v0.6.5) (2026-04-14)
 
 ### Chore
 
@@ -253,7 +271,7 @@
 
 
 <a name="v0.6.4"></a>
-## v0.6.4 (2026-04-14)
+## [v0.6.4](https://github.com/impleotv/stinspector/compare/v0.6.3...v0.6.4) (2026-04-14)
 
 ### Chore
 
@@ -262,7 +280,7 @@
 
 
 <a name="v0.6.3"></a>
-## v0.6.3 (2026-04-13)
+## [v0.6.3](https://github.com/impleotv/stinspector/compare/v0.6.2...v0.6.3) (2026-04-13)
 
 ### Chore
 
@@ -274,7 +292,7 @@
 
 
 <a name="v0.6.2"></a>
-## v0.6.2 (2026-04-13)
+## [v0.6.2](https://github.com/impleotv/stinspector/compare/v0.6.1...v0.6.2) (2026-04-13)
 
 ### Chore
 
@@ -287,7 +305,7 @@
 
 
 <a name="v0.6.1"></a>
-## v0.6.1 (2026-04-13)
+## [v0.6.1](https://github.com/impleotv/stinspector/compare/v0.6.0...v0.6.1) (2026-04-13)
 
 ### Fix
 
@@ -295,7 +313,7 @@
 
 
 <a name="v0.6.0"></a>
-## v0.6.0 (2026-04-13)
+## [v0.6.0](https://github.com/impleotv/stinspector/compare/v0.5.2...v0.6.0) (2026-04-13)
 
 ### Chore
 
@@ -307,7 +325,7 @@
 
 
 <a name="v0.5.2"></a>
-## v0.5.2 (2026-04-09)
+## [v0.5.2](https://github.com/impleotv/stinspector/compare/v0.5.1...v0.5.2) (2026-04-09)
 
 ### Chore
 
@@ -326,7 +344,7 @@
 
 
 <a name="v0.5.1"></a>
-## v0.5.1 (2026-04-08)
+## [v0.5.1](https://github.com/impleotv/stinspector/compare/v0.5.0...v0.5.1) (2026-04-08)
 
 ### Chore
 
@@ -334,7 +352,7 @@
 
 
 <a name="v0.5.0"></a>
-## v0.5.0 (2026-04-08)
+## [v0.5.0](https://github.com/impleotv/stinspector/compare/v0.4.1...v0.5.0) (2026-04-08)
 
 ### Chore
 
@@ -350,11 +368,11 @@
 
 
 <a name="v0.4.1"></a>
-## v0.4.1 (2026-04-06)
+## [v0.4.1](https://github.com/impleotv/stinspector/compare/v0.4.0...v0.4.1) (2026-04-06)
 
 
 <a name="v0.4.0"></a>
-## v0.4.0 (2026-04-06)
+## [v0.4.0](https://github.com/impleotv/stinspector/compare/v0.3.0...v0.4.0) (2026-04-06)
 
 ### Chore
 
@@ -378,7 +396,7 @@
 
 
 <a name="v0.3.0"></a>
-## v0.3.0 (2026-04-04)
+## [v0.3.0](https://github.com/impleotv/stinspector/compare/v0.2.2...v0.3.0) (2026-04-04)
 
 ### Chore
 
@@ -414,7 +432,7 @@
 
 
 <a name="v0.2.2"></a>
-## v0.2.2 (2026-03-30)
+## [v0.2.2](https://github.com/impleotv/stinspector/compare/v0.2.1...v0.2.2) (2026-03-30)
 
 ### Chore
 
@@ -434,7 +452,7 @@
 
 
 <a name="v0.2.1"></a>
-## v0.2.1 (2026-03-29)
+## [v0.2.1](https://github.com/impleotv/stinspector/compare/v0.2.0...v0.2.1) (2026-03-29)
 
 ### Chore
 
@@ -442,7 +460,7 @@
 
 
 <a name="v0.2.0"></a>
-## v0.2.0 (2026-03-29)
+## [v0.2.0](https://github.com/impleotv/stinspector/compare/v0.1.7...v0.2.0) (2026-03-29)
 
 ### Chore
 
@@ -462,7 +480,7 @@
 
 
 <a name="v0.1.7"></a>
-## v0.1.7 (2026-03-28)
+## [v0.1.7](https://github.com/impleotv/stinspector/compare/v0.1.6...v0.1.7) (2026-03-28)
 
 ### Chore
 
@@ -474,7 +492,7 @@
 
 
 <a name="v0.1.6"></a>
-## v0.1.6 (2026-03-27)
+## [v0.1.6](https://github.com/impleotv/stinspector/compare/v0.1.5...v0.1.6) (2026-03-27)
 
 ### Chore
 
@@ -482,7 +500,7 @@
 
 
 <a name="v0.1.5"></a>
-## v0.1.5 (2026-03-26)
+## [v0.1.5](https://github.com/impleotv/stinspector/compare/v0.1.4...v0.1.5) (2026-03-26)
 
 ### Chore
 
@@ -495,7 +513,7 @@
 
 
 <a name="v0.1.4"></a>
-## v0.1.4 (2026-03-25)
+## [v0.1.4](https://github.com/impleotv/stinspector/compare/v0.1.2...v0.1.4) (2026-03-25)
 
 ### Chore
 
@@ -507,7 +525,7 @@
 
 
 <a name="v0.1.2"></a>
-## v0.1.2 (2026-03-25)
+## [v0.1.2](https://github.com/impleotv/stinspector/compare/v0.1.1...v0.1.2) (2026-03-25)
 
 ### Chore
 
@@ -530,7 +548,7 @@
 
 
 <a name="v0.1.1"></a>
-## v0.1.1 (2026-03-23)
+## [v0.1.1](https://github.com/impleotv/stinspector/compare/v0.1.0...v0.1.1) (2026-03-23)
 
 ### Chore
 
@@ -607,4 +625,5 @@
 ### Chore
 
 * First commit
+
 
