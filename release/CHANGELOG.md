@@ -1,6 +1,18 @@
 ﻿
+<a name="v1.2.1"></a>
+## [v1.2.1](https://github.com/impleotv/stinspector/compare/v1.2.0...v1.2.1) (2026-07-02)
+
+### Chore
+
+* Make pdf report optional
+
+### Fix
+
+* Fix Linux application icon
+
+
 <a name="v1.2.0"></a>
-## [v1.2.0](https://github.com/impleotv/stinspector/compare/v1.1.4...v1.2.0) (2026-07-01)
+## [v1.2.0](https://github.com/impleotv/stinspector/compare/v1.1.4...v1.2.0) (2026-07-02)
 
 ### Chore
 
