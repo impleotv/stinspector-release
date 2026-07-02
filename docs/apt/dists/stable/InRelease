@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: StInspector
+Label: StInspector
+Suite: stable
+Codename: stable
+Architectures: amd64
+Components: main
+Description: STANAG4609 Inspector APT repository
+Date: Thu, 02 Jul 2026 16:23:32 +0000
+MD5Sum:
+ 81ef3fcbb7b40cd4b06126cc7ff8429c               38 Release
+ bd6f3a08651f319c05ad440ac781c2c6             8408 main/binary-amd64/Packages
+ ed950dfb243d1f7b6fc84420ae732b5e             1496 main/binary-amd64/Packages.gz
+SHA1:
+ 89b4ec84ebf297941748880b13903b0304090b1d               38 Release
+ 68bb52c3c9f7384a606c074c12b2b939a06cf69a             8408 main/binary-amd64/Packages
+ 820ffe4831cca83660b4193553207957e4789e89             1496 main/binary-amd64/Packages.gz
+SHA256:
+ 8e57f78c74a6ba9290ce1f36df2f1fa5d2ee053c11deb02a34342f7d9f3d600e               38 Release
+ d8a82bcadc325d21e47345e54f992bcaa2ede3e0c1fb2b5a2e84d0bfaa87f0d1             8408 main/binary-amd64/Packages
+ 5a835c2ffb77462671d8984ba8aac1c3a4973b971c8320b9ba4ac2bb1f9635f2             1496 main/binary-amd64/Packages.gz
+SHA512:
+ d9f903ee146d48b9b04e5c8d6296584a285a08331fc527f378923eb93a51aed0ecf80df8fb4ff7c90145047f0c34e63f80a3e8c2220f0f5d3a655b4880bc76b4               38 Release
+ 6957db6ef00f0bc66b5c3b06a06be73d2af7f5d559b2e1bcfca84531a521486ce12f0d57056f54b15b8fc25650eef76bbd5dce5b52913edfbc7ec6f0fff26d79             8408 main/binary-amd64/Packages
+ f541ff2ddae6d160085b364d95e68c1c07089fdfdc9150fcf9f37d0ef09737b5cb82b9f693f825bb106151b5d3408eb246815f2f1c5c6e3f54fa4c8b95949ab9             1496 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEY4Y1GggWJiQtM0zGgE8gZ9dPYEYFAmpGkIUACgkQgE8gZ9dP
+YEZ9DhAAgwMHaho8cdbCvsn4XN+LzrJRbftZ99F8bCj7NLx2BWWM/LJNNDHnIx4G
+Dqo03x62bqMoPeeqqxmjUbPvg+94NIbrrX/xKnfxwCFXq4y/EtgznVwEzZcphlCn
+bx91KTVCLhXOopmvBclCToTB4jpvAUQqcHomq6kb+YcjCy5nBkiVu4HvZWbT79BR
+J/H6+a26p9leRNHsJs6Uf+aQN/ms5np7aEBKNA+pYytExctMCZK3s5bxOcHdHUIa
+gkZ8H/VsPjfrTnFEOf26JCcDHWH/vNfHdT4+MwpzcXCEOHVJXXXyrQOMbTjJW0EK
+7lIcUSfKWXRgs8ScV3JcKxZru2mPNbmXkvyMd7MULatW/V15UIRA7KMCmS15T37P
+sSX9EjmqWo53duG2O9Eotqj9EiC3tjO/ZdArgx73UkEs0vVCGYmtYExIeQx8eJ/p
+NhLbvLng4+M8VXfQMg6R6C/ARlCrsXlS9ixfBEoy8srjISt1hqKc+4TBNHxUHang
+5MCEYLPpEkyXRp2BF5xe27uCBy6qUNSNdfHsWraUnSomWIkLjcsKnDRa+hapa9mM
+W1QccCRC5Q+X1RW4s0cAiZ/RbHuFdKCVWj94wYkllDvr9a6fqk4yV0Eq6ic1GR19
+PIesZ1TIjMbkauf8vyhi6VWEgNOzXd/ohTA38HJWYGwXPYvnqy0=
+=jeEw
+-----END PGP SIGNATURE-----
