@@ -181,16 +181,7 @@ function createPrimaryDownload(asset) {
 
 function createMacosDownload(dmgAsset) {
   if (!dmgAsset) {
-    return createDownloadCard({
-      heading: 'macOS',
-      title: 'Disk image (.dmg)',
-      description: 'The macOS release artifact has not been attached to this release yet.',
-      codeBlock: [
-        'Open the published release after the macOS DMG is uploaded.',
-        'Drag StInspector.app into Applications.',
-        'On first launch, use right-click > Open if Gatekeeper blocks the app.',
-      ].join('\n'),
-    });
+    return null;
   }
 
   return createDownloadCard({
@@ -262,10 +253,14 @@ function normalizeDebianVersion(tagName) {
 }
 
 function createLinuxDebCard(release, debAsset) {
+  if (!debAsset) {
+    return null;
+  }
+
   const debVersion = normalizeDebianVersion(release.tag_name);
-  const debFileName = debAsset?.name || `stinspector_${debVersion}_amd64.deb`;
-  const debUrl = debAsset?.browser_download_url || `${aptBaseUrl}/pool/main/stinspector_${debVersion}_amd64.deb`;
-  const size = debAsset?.size;
+  const debFileName = debAsset.name || `stinspector_${debVersion}_amd64.deb`;
+  const debUrl = debAsset.browser_download_url;
+  const size = debAsset.size;
 
   return createDownloadCard({
     heading: 'Linux .deb',
@@ -301,6 +296,16 @@ function createActionRow(cards) {
   return row;
 }
 
+function createUnavailableCard() {
+  return createDownloadCard({
+    heading: 'All Platforms',
+    title: 'GitHub release assets',
+    description: 'Open the latest public release to view the files that have actually been published.',
+    buttonLabel: 'Open Latest Release',
+    href: `${releasesUrl}/latest`,
+  });
+}
+
 function renderAssets(release) {
   const assets = release.assets || [];
   const installerAsset = assets.find((asset) => /installer.*\.exe$/i.test(asset.name))
@@ -312,19 +317,31 @@ function renderAssets(release) {
   if (installerAsset) {
     primaryCards.push(createPrimaryDownload(installerAsset));
   }
-  primaryCards.push(createMacosDownload(dmgAsset));
+  const macosCard = createMacosDownload(dmgAsset);
+  if (macosCard) {
+    primaryCards.push(macosCard);
+  }
 
-  const linuxCards = [
-    createLinuxDebCard(release, debAsset),
-    createLinuxAptCard(),
-  ];
+  const linuxCards = [];
+  const linuxDebCard = createLinuxDebCard(release, debAsset);
+  if (linuxDebCard) {
+    linuxCards.push(linuxDebCard, createLinuxAptCard());
+  }
 
-  heroActions.replaceChildren(
-    createActionRow(primaryCards),
-    createActionRow(linuxCards),
-  );
+  const rows = [];
+  if (primaryCards.length > 0) {
+    rows.push(createActionRow(primaryCards));
+  }
+  if (linuxCards.length > 0) {
+    rows.push(createActionRow(linuxCards));
+  }
+  if (rows.length === 0) {
+    rows.push(createActionRow([createUnavailableCard()]));
+  }
 
-  if (installerAsset && dmgAsset) {
+  heroActions.replaceChildren(...rows);
+
+  if (installerAsset && dmgAsset && debAsset) {
     releaseStatus.textContent = '';
     return;
   }
@@ -336,8 +353,11 @@ function renderAssets(release) {
   if (!dmgAsset) {
     missingAssets.push('macOS disk image');
   }
+  if (!debAsset) {
+    missingAssets.push('Linux package');
+  }
 
-  releaseStatus.textContent = `${missingAssets.join(' and ')} ${missingAssets.length === 1 ? 'is' : 'are'} not attached to the latest release yet. Linux downloads remain available below.`;
+  releaseStatus.textContent = `${missingAssets.join(', ')} ${missingAssets.length === 1 ? 'is' : 'are'} not attached to the latest release yet. Only published assets are shown below.`;
 }
 
 async function loadLatestRelease() {
