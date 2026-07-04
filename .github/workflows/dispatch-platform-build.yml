@@ -1,0 +1,43 @@
+name: Dispatch platform package build
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to build, for example v1.3.0
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_REPOSITORY: impleotv/stinspector
+      RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      GH_TOKEN: ${{ secrets.STINSPECTOR_SOURCE_DISPATCH_TOKEN }}
+    steps:
+      - name: Dispatch build in source repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "STINSPECTOR_SOURCE_DISPATCH_TOKEN is required to dispatch the source repository workflow." >&2
+            exit 1
+          fi
+          if [ -z "${RELEASE_TAG:-}" ]; then
+            echo "Release tag is empty." >&2
+            exit 1
+          fi
+          payload="$(jq -n \
+            --arg tag "$RELEASE_TAG" \
+            --arg release_repository "$GITHUB_REPOSITORY" \
+            '{event_type:"stinspector-release-published", client_payload:{tag_name:$tag, release_repository:$release_repository}}')"
+          gh api "repos/${SOURCE_REPOSITORY}/dispatches" \
+            --method POST \
+            --input - <<< "$payload"
