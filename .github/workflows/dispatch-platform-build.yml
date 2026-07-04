@@ -20,14 +20,14 @@ jobs:
     env:
       SOURCE_REPOSITORY: impleotv/stinspector
       RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
-      GH_TOKEN: ${{ secrets.STINSPECTOR_PACKAGE_READ_TOKEN }}
+      GH_TOKEN: ${{ secrets.STINSPECTOR_IMPLEOTV_READ_TOKEN || secrets.STINSPECTOR_SOURCE_DISPATCH_TOKEN }}
     steps:
       - name: Dispatch build in source repository
         shell: bash
         run: |
           set -euo pipefail
           if [ -z "${GH_TOKEN:-}" ]; then
-            echo "STINSPECTOR_PACKAGE_READ_TOKEN is required to dispatch the source repository workflow." >&2
+            echo "STINSPECTOR_IMPLEOTV_READ_TOKEN or STINSPECTOR_SOURCE_DISPATCH_TOKEN is required to dispatch the source repository workflow." >&2
             exit 1
           fi
           if [ -z "${RELEASE_TAG:-}" ]; then
