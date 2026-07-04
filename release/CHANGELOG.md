@@ -1,4 +1,24 @@
 ﻿
+<a name="v1.3.1"></a>
+## [v1.3.1](https://github.com/impleotv/stinspector/compare/v1.3.0...v1.3.1) (2026-07-04)
+
+### Chore
+
+* ver 1.3.1
+
+### Ci
+
+* split source and package release credentials
+* prepare package build environment
+* use github token for source checkout
+* build platform release assets
+
+### Fix
+
+* require update public key for signed builds
+* hide unpublished release platform links
+
+
 <a name="v1.3.0"></a>
 ## [v1.3.0](https://github.com/impleotv/stinspector/compare/v1.2.1...v1.3.0) (2026-07-04)
 
