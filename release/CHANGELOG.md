@@ -1,4 +1,43 @@
 ﻿
+<a name="v1.4.2"></a>
+## [v1.4.2](https://github.com/impleotv/stinspector/compare/v1.4.1...v1.4.2) (2026-07-12)
+
+### Chore
+
+* Update dependencies
+* ver1.4.1
+
+
+<a name="v1.4.1"></a>
+## [v1.4.1](https://github.com/impleotv/stinspector/compare/v1.4.0...v1.4.1) (2026-07-11)
+
+### Chore
+
+* Optimize pcap processing
+
+
+<a name="v1.4.0"></a>
+## [v1.4.0](https://github.com/impleotv/stinspector/compare/v1.3.1...v1.4.0) (2026-07-11)
+
+### Chore
+
+* Update manual
+* pcap processing optimisations
+* Update dependencies
+* Modify update button
+
+### Feat
+
+* Add preparing ingest step progress indicator
+* Add ingest range
+
+### Fix
+
+* Fix Mac build
+* Fix Linux compilation
+* Fix partially rendered charts in the report
+
+
 <a name="v1.3.1"></a>
 ## [v1.3.1](https://github.com/impleotv/stinspector/compare/v1.3.0...v1.3.1) (2026-07-04)
 
