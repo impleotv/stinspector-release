@@ -1,4 +1,20 @@
 ﻿
+<a name="v1.4.4"></a>
+## [v1.4.4](https://github.com/impleotv/stinspector/compare/v1.4.3...v1.4.4) (2026-07-12)
+
+### Fix
+
+* Fix large file processing and report export
+
+
+<a name="v1.4.3"></a>
+## [v1.4.3](https://github.com/impleotv/stinspector/compare/v1.4.2...v1.4.3) (2026-07-12)
+
+### Fix
+
+* Fix large file export. Split section creation
+
+
 <a name="v1.4.2"></a>
 ## [v1.4.2](https://github.com/impleotv/stinspector/compare/v1.4.1...v1.4.2) (2026-07-12)
 
