@@ -1,4 +1,19 @@
 ﻿
+<a name="v1.4.5"></a>
+## [v1.4.5](https://github.com/impleotv/stinspector/compare/v1.4.4...v1.4.5) (2026-08-16)
+
+### Chore
+
+* Update backend dependencies
+* Update frontend dependencies
+
+### Fix
+
+* Fix OpenStreatMaps access block in production
+* Charts now use 0 - full transport-stream size for errors
+* Fix the OpenStreetMap 403 regression on Windows
+
+
 <a name="v1.4.4"></a>
 ## [v1.4.4](https://github.com/impleotv/stinspector/compare/v1.4.3...v1.4.4) (2026-07-12)
 
