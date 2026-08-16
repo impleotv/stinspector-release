@@ -1,4 +1,17 @@
 ﻿
+<a name="v1.4.7"></a>
+## [v1.4.7](https://github.com/impleotv/stinspector/compare/v1.4.6...v1.4.7) (0001-01-01)
+
+
+<a name="v1.4.6"></a>
+## [v1.4.6](https://github.com/impleotv/stinspector/compare/v1.4.5...v1.4.6) (2026-08-16)
+
+### Chore
+
+* Modify the updater and the setup
+* version
+
+
 <a name="v1.4.5"></a>
 ## [v1.4.5](https://github.com/impleotv/stinspector/compare/v1.4.4...v1.4.5) (2026-08-16)
 
