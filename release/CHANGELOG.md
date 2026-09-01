@@ -1,6 +1,27 @@
 ﻿
+<a name="v1.4.8"></a>
+## [v1.4.8](https://github.com/impleotv/stinspector/compare/v1.4.7...v1.4.8) (2026-09-01)
+
+### Chore
+
+* Update frontend dependencies
+* Modify time format
+* Modify manual
+* Modify KLV span test fail criteria
+* Update dependencies
+* NSIS now removes the obsolete stinspector_updater.exe during upgrades. Added regression coverage for PID waiting and legacy-helper removal
+
+### Feat
+
+* Add PCR-PTS-KLV Span Consistency test
+
+### Fix
+
+* Fix report map
+
+
 <a name="v1.4.7"></a>
-## [v1.4.7](https://github.com/impleotv/stinspector/compare/v1.4.6...v1.4.7) (0001-01-01)
+## [v1.4.7](https://github.com/impleotv/stinspector/compare/v1.4.6...v1.4.7) (2026-08-16)
 
 
 <a name="v1.4.6"></a>
