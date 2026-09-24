@@ -1,4 +1,16 @@
 ﻿
+<a name="v1.4.9"></a>
+## [v1.4.9](https://github.com/impleotv/stinspector/compare/v1.4.8...v1.4.9) (2026-09-24)
+
+### Chore
+
+* ver 1.4.9
+* Improve frame accuracy for video frame / klv packet presentation
+* Upgrade go to 1.27 and update deps
+* Replace detailed klv info engine (use frontend libmisb)
+* Improve detailed klv presentation and delete git submodules
+
+
 <a name="v1.4.8"></a>
 ## [v1.4.8](https://github.com/impleotv/stinspector/compare/v1.4.7...v1.4.8) (2026-09-01)
 
