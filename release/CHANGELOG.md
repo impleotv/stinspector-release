@@ -1,4 +1,20 @@
 ﻿
+<a name="v1.5.0"></a>
+## [v1.5.0](https://github.com/impleotv/stinspector/compare/v1.4.9...v1.5.0) (2026-09-27)
+
+### Chore
+
+* Improve build scripts
+* Update manual
+* Update 3D view implementation
+
+### Feat
+
+* Add cesium ion layers and token support
+* Add Metadata Access Unit Length Validation and manual modifications
+* Add Metadata Access Unit Length Validation and manual modifications
+
+
 <a name="v1.4.9"></a>
 ## [v1.4.9](https://github.com/impleotv/stinspector/compare/v1.4.8...v1.4.9) (2026-09-24)
 
