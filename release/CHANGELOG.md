@@ -1,4 +1,15 @@
 ﻿
+<a name="v1.5.1"></a>
+## [v1.5.1](https://github.com/impleotv/stinspector/compare/v1.5.0...v1.5.1) (2026-09-27)
+
+### Chore
+
+* gitignore
+* Add theme support
+* Add theme support
+* Update gitignore
+
+
 <a name="v1.5.0"></a>
 ## [v1.5.0](https://github.com/impleotv/stinspector/compare/v1.4.9...v1.5.0) (2026-09-27)
 
