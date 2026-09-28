@@ -1,4 +1,17 @@
 ﻿
+<a name="v1.5.2"></a>
+## [v1.5.2](https://github.com/impleotv/stinspector/compare/v1.5.1...v1.5.2) (2026-09-28)
+
+### Chore
+
+* Update deps
+* ver 1.5.2
+
+### Fix
+
+* Mac fixes
+
+
 <a name="v1.5.1"></a>
 ## [v1.5.1](https://github.com/impleotv/stinspector/compare/v1.5.0...v1.5.1) (2026-09-27)
 
