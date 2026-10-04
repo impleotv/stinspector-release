@@ -1,4 +1,17 @@
 ﻿
+<a name="v1.5.3"></a>
+## [v1.5.3](https://github.com/impleotv/stinspector/compare/v1.5.2...v1.5.3) (2026-10-04)
+
+### Chore
+
+* Version 1.5.3
+* Update libmisb and 3D View
+
+### Fix
+
+* Fix github actions
+
+
 <a name="v1.5.2"></a>
 ## [v1.5.2](https://github.com/impleotv/stinspector/compare/v1.5.1...v1.5.2) (2026-09-28)
 
