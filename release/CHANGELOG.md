@@ -1,4 +1,16 @@
 ﻿
+<a name="v1.5.4"></a>
+## [v1.5.4](https://github.com/impleotv/stinspector/compare/v1.5.3...v1.5.4) (2026-11-03)
+
+### Chore
+
+* Modify report formatting
+* Modify makefile
+* Update deps and fix misb102 validation
+* Update go deps
+* ver
+
+
 <a name="v1.5.3"></a>
 ## [v1.5.3](https://github.com/impleotv/stinspector/compare/v1.5.2...v1.5.3) (2026-10-04)
 
