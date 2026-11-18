@@ -1,4 +1,38 @@
 ﻿
+<a name="v1.6.0"></a>
+## [v1.6.0](https://github.com/impleotv/stinspector/compare/v1.5.5...v1.6.0) (2026-11-18)
+
+### Feat
+
+* Add 'Open first affected packet'
+
+
+<a name="v1.5.5"></a>
+## [v1.5.5](https://github.com/impleotv/stinspector/compare/v1.5.4...v1.5.5) (2026-11-18)
+
+### Chore
+
+* Version 1.5.5
+* Update deps and modify VERSION handling
+* Update uav map and cesium
+* Update frontend deps
+* Version
+
+### Docs
+
+* record final clean checks and remaining native qualification
+* record verified frontend upgrades and runtime requirements
+
+### Fix
+
+* keep Windows PDF save dialogs stable across focus changes
+* preserve KLV checksums and warn on non-minimal BER lengths
+
+### Pull Requests
+
+* Merge pull request [#1](https://github.com/impleotv/stinspector/issues/1) from impleotv/codex/frontend-dependency-upgrades
+
+
 <a name="v1.5.4"></a>
 ## [v1.5.4](https://github.com/impleotv/stinspector/compare/v1.5.3...v1.5.4) (2026-11-03)
 
